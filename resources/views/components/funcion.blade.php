@@ -2,7 +2,7 @@
     <div class=" w-{{ $ancho }} h-{{ $alto }} mx-auto my-5">
         <img src="{{ $img }}" alt="{{ $img }}" class="mx-auto">
     </div>
-    <div class="text-purple-200 font-semibold text-xl mt-3 w-32 mx-auto text-center">
+    <div class="text-purple-200 font-semibold text-xl mt-3 mx-auto text-center" style="width: 134px">
         {{ $title }}
     </div>
 </div>

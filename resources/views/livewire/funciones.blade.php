@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-    <div class="text-purple-200 font-bold text-center text-3xl w-full" id="funciona">¿Cómo funciona?</div>
+    <div class="text-purple-200 font-black  text-center text-3xl w-full" id="funciona">¿Cómo funciona?</div>
     <div class="flex flex-col md:flex-row items-center my-5">
         <x-funcion>
             <x-slot name="ancho">48</x-slot>
@@ -22,7 +22,7 @@
         
     </div>
 
-    <div class="w-full text-purple-200 text-center font-extralight text-xl mt-28 ">
-        <a href="#" class="text-purple-200 underline underline-offset-4 ">Más información</a>
+    <div class="w-full text-purple-200 font-extralight text-xl mt-16 text-center md:text-right ">
+        <a href="#" class="text-white bg-purple-200 rounded-full py-2 px-3 ">Más información</a>
     </div>    
 </div>
