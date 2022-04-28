@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-    <div class="text-purple-200 font-semibold text-center text-3xl w-full" id="funciona">¿Cómo funciona?</div>
+    <div class="text-purple-200 font-bold text-center text-3xl w-full" id="funciona">¿Cómo funciona?</div>
     <div class="flex flex-col md:flex-row items-center my-5">
         <x-funcion>
             <x-slot name="ancho">48</x-slot>
