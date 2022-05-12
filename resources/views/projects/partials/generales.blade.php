@@ -102,7 +102,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::textarea('investment_breakdown', 'Describen el uso de la cantidad y la inversión', []) !!}
+        {!! Form::textarea('investment_breakdown', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad iure mollitia eveniet voluptas, amet ipsum beatae dolorum doloribus, itaque consectetur explicabo molestiae ex, aspernatur magnam dicta! Optio, quam deserunt.', []) !!}
         @error('investment_breakdown')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -141,7 +141,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::textarea('capital', 'Describe el Capital con el que cuentas: ¿Cuánto cuesta tu proyecto?, ¿Cuánto pides aquí? ¿Cómo obtuviste tu capital? ¿Tienes deuda? ¿Origen de los recursos?', []) !!}
+        {!! Form::textarea('capital', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad iure mollitia eveniet voluptas, amet ipsum beatae dolorum doloribus, itaque consectetur explicabo molestiae ex, aspernatur magnam dicta! Optio, quam deserunt.', []) !!}
         @error('capital')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -155,7 +155,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::textarea('returns', 'Describe lo que se ofrece a los que inviertan en el proyecto.', []) !!}
+        {!! Form::textarea('returns', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad iure mollitia eveniet voluptas, amet ipsum beatae dolorum doloribus, itaque consectetur explicabo molestiae ex, aspernatur magnam dicta! Optio, quam deserunt.', []) !!}
         @error('returns')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror

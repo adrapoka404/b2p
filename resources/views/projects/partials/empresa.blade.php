@@ -44,7 +44,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::text('enterprise[website]', 'nourl.com.mx', []) !!}
+        {!! Form::text('enterprise[website]', 'https://beezper.imvdemexico.com/', []) !!}
         @error('enterprise.website')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror

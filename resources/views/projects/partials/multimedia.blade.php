@@ -7,7 +7,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::textarea('multimedia[links]', 'Agregue los links necesarios de videos y/o sitios de su proyecto. puede agregar mas de un link separado por coma.', []) !!}
+        {!! Form::textarea('multimedia[links]', 'http://algoenlinea.com,http://otracosa.com.mx,https://mifacebook.com.mx', []) !!}
         @error('multimedia.links')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
