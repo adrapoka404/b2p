@@ -3,12 +3,14 @@
 use App\Http\Controllers\EconomicActivityController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectTypesController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Sudo\PermissionController;
 use App\Http\Controllers\Sudo\RoleController as SudoRoleController;
 use App\Http\Controllers\Sudo\RolePermissionController;
 use App\Http\Controllers\Sudo\UserController;
 use App\Http\Controllers\Sudo\UserRoleController;
+use App\Http\Controllers\VerificarcpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +41,7 @@ Route::middleware([
 Route::resource('economicactivities', EconomicActivityController::class)->middleware(['auth:sanctum', 'verified']);
 Route::resource('incomes', IncomeController::class)->middleware(['auth:sanctum', 'verified']);
 //Route::resource('users', UserController::class)->middleware(['auth:sanctum', 'verified']);
-Route::resource('addresses', AddressController::class)->middleware(['auth:sanctum', 'verified']);
+//Route::resource('addresses', AddressController::class)->middleware(['auth:sanctum', 'verified']);
 
 Route::get('no-autorizado', function () {
     return "Usted no es mayor de edad SALV";
@@ -52,3 +54,6 @@ Route::resource('usersrole', UserRoleController::class)->names('usersrole');
 Route::resource('rolespermission', RolePermissionController::class)->names('rolespermission');
 Route::resource('rolespermission', RolePermissionController::class)->names('rolespermission');
 Route::resource('projects', ProjectController::class)->names('projects');
+Route::resource('testprojects', ProjectController::class)->names('testprojects');
+Route::resource('projecttypes', ProjectTypesController::class)->names('projecttypes');
+Route::resource('verificarcp', VerificarcpController::class)->names('verificarcp');

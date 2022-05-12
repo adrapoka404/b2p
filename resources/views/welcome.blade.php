@@ -10,6 +10,58 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     @livewireStyles
+    <style>
+        .circulo {
+            position: relative;
+            width: 60vh;
+            height: 60vh;
+            background: linear-gradient(#e90000, #5c7bff, #44b5e3);
+            border-radius: 50%;
+            animation: animate 5s linear infinite;
+        }
+
+        @keyframes animate{
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        .circulo::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            bottom: 35px;
+            left: 35px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .circulo span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#e90000, #5c7bff, #44b5e3);
+            border-radius: 50%;
+        }
+
+        .circulo span:nth-child(1){
+            filter: blur(15px)
+        }
+        .circulo span:nth-child(2){
+            filter: blur(15px)
+        }
+        .circulo span:nth-child(3){
+            filter: blur(15px)
+        }
+        .circulo span:nth-child(4){
+            filter: blur(15px)
+        }
+    </style>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
@@ -21,6 +73,16 @@
         @livewire('funciones');
         <div class=" max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8  mt-20 ">
             <div class="text-purple-200 font-semibold text-center text-3xl w-full" id="proyectos">Interconectamos</div>
+            <div>
+                Alocandonos
+                <div class="circulo">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
             <div class="w-full md:flex ">
                 <x-funcion>
                     <x-slot name="ancho">48</x-slot>
@@ -52,26 +114,22 @@
                     </div>
                 </div>
             </div>
-            <div class=" max-w-screen-md mx-auto">
+            <div class=" max-w-screen-xl mx-auto">
                 <div class=" text-left text-purple-200 my-20">
                     Invertir es muy sencillo
                 </div>
                 <div class="grid grid-cols-2 grid-rows-2">
-                    <div class="w-1/2 mx-auto ">
-                        <div class="text-purple-200 font-light">Registrate</div>
-                        <div class="my-10 bg-fondo-home-registrate w-40 h-40 bg-contain bg-no-repeat"></div>
+                    <div class="w-full">
+                        <div class="my-10 bg-fondo-home-registrate  w-11/12 h-96 bg-contain bg-no-repeat mx-auto"></div>
                     </div>
-                    <div class="w-1/2 mx-auto ">
-                        <div class="text-purple-200 font-light">Elige un proyecto</div>
-                        <div class="my-10 bg-fondo-home-elegir w-40 h-40 bg-contain bg-no-repeat"></div>
+                    <div class="w-full">
+                        <div class="my-10 bg-fondo-home-elegir  w-11/12 h-96 bg-contain bg-no-repeat mx-auto"></div>
                     </div>
-                    <div class="w-1/2 mx-auto ">
-                        <div class="text-purple-200 font-light">Invierte</div>
-                        <div class="my-10 bg-fondo-home-invierte w-40 h-40 bg-contain bg-no-repeat"></div>
+                    <div class="w-full">
+                        <div class="my-10 bg-fondo-home-invierte w-11/12  h-96 bg-contain bg-no-repeat mx-auto"></div>
                     </div>
-                    <div class="w-1/2 mx-auto  mt-10">
-                        <div class="text-purple-200 font-light">Empieza a ganar</div>
-                        <div class="my-10 bg-fondo-home-gana w-40 h-40 bg-contain bg-no-repeat"></div>
+                    <div class="w-full mt-10">
+                        <div class="my-14 bg-fondo-home-gana w-11/12 h-96 bg-contain bg-no-repeat mx-auto"></div>
                     </div>
                 </div>
             </div>

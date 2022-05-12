@@ -21,7 +21,7 @@ return new class extends Migration
             $table->double('goal')->require();
             $table->date('estimated term')->require();
             $table->string('location')->require();
-            $table->foreignId('project_type_id')->index()->unique();            
+            $table->foreignId('project_type_id')->index();            
             $table->timestamps();
         });
     }
