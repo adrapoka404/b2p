@@ -1,6 +1,6 @@
 <div class="mx-5 my-5 c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
     <img class=" xl:h-60 lg:h-56  md:h-64 sm:h-72 xs:h-72 rounded object-cover object-center mb-4 "
-        src="{{ Storage::url($project_image)}}" alt="Image Size 720x400" />
+        src="{{ asset('projects_multimedia/'.$project_image)}}" alt="{{$project_name}}" />
     <div class="p-4">
         <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">
             {{$project_user}}

@@ -9,7 +9,7 @@
         <x-no-project />
     @else
         @foreach ($projects as $project)
-            <x-card-project>
+        <x-card-project>
                 <x-slot name='project_image'>{{ $project->multimedia[0]['multimedia1'] }}</x-slot>
                 <x-slot name='project_user'>{{ $project->user[0]['name'] }}</x-slot>
                 <x-slot name='project_name'>{{ $project->name }}</x-slot>
