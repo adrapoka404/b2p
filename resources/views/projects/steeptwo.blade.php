@@ -3,39 +3,91 @@
         <div
             class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
             <div class="w-1/8 ">
-                <div class="bg-menu-project-two bg-cover w-20 h-20 -m-10 text-center items-start text-xs pt-5 text-white cursor-pointer ">
+                <div
+                    class="bg-menu-project bg-cover w-20 h-20 -m-10 text-center items-start text-xs pt-5 text-white cursor-pointer ">
                     icono
                 </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
+                <div
+                    class=" bg-menu-project-two bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
                     icono
                 </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
+                <div
+                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
                     icono
                 </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
+                <div
+                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
                     icono
                 </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
+                <div
+                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
                     icono
                 </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
+                <div
+                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
                     icono
                 </div>
             </div>
-            {!! Form::open(['route' => 'steepone.store','atocomplete'=>'off', 'files' => true]) !!}
+            {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true]) !!}
             <div class="w-full">
                 <div class="">
                     <x-subtitle_form>
-                        {{ __('Información del proyecto') }}
+                        {{ __('Información de la Empresa') }}
                     </x-subtitle_form>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::text('project[name]', old('project.name'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre del Proyecto']) !!}
+                        {!! Form::textarea('company[description]', old('company.description'), ['class' => 'border-2 border-blue-600 rounded rounded-2xl w-full hover:bg-gray-hover', 'placeholder' => __('* Descripción de la empresa'), 'rows' => 5]) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Asigna un nombre a tu proyecto, debe ser corto y claro. Ejemplo: "Área 404"') }}
+                            {{ __('Resume en un máximo de 600 caracteres el track record (trayectoria) de tu empresa, desde que fue constituida, si es una empresa familiar, proyectos exitosos concluidos, experiencia, ejemplos de la calidad de su trabajo, referencias de clientes, proveedores.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[razonsocial]', old('project.razonsocial'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Razón social']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('La razón social como aparece en el RFC incluyendo el tipo de empresa, es decir, si es Sociedad Anónima, Capital Variable, etc.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[nombrecomercial]', old('project.nombrecomercial'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre comercial']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Registrar el nombre comercial de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::date('company[contitution]', old('company.constitution'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Fecha de constitución: Registrar 2 números para día, 2 números para mes y 4 números para el año. Debe coincidir con el acta constitutiva y el RFC') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[iniciofunciones]', old('project.iniciofunciones'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Mes y año de inicio de funciones']) !!}
+                        <div class="my-3">
+                            <label for="noinfunction" class="my-3">
+                                {!! Form::checkbox('copany[noinfuntion]', old('company.noinfunction'), old('company.noinfunction'), ['class' => 'border-2 border-blue-600 h-5 w-5 hover:bg-gray-hover', 'id' => 'noinfunction']) !!}
+                                {{ __('Aún NO está en funciones ') }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Registrar 2 números para mes y 4 números para el año ó marcar casilla Aún NO está en funciones.') }}
                         </x-help_form>
                     </div>
                 </div>
@@ -423,7 +475,7 @@
                     <x-subtitle_form>
                         {{ __('Inversión') }}
                     </x-subtitle_form>
-                    
+
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
@@ -562,7 +614,7 @@
                         <div>{{ __('Ganancias') }}</div>
                         {{ __('Describe lo que se ofrece a los que inviertan en el proyecto.') }}
                     </x-subtitle_form>
-                    
+
                 </div>
 
                 <div class="flex">
@@ -636,11 +688,11 @@
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        
+
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
-                        {!! Form::submit('Guardar avance', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer"]) !!}
-                        {!! Form::submit('Siguiente', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer"]) !!}
+                        {!! Form::submit('Guardar avance', ['class' => 'bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer']) !!}
+                        {!! Form::submit('Siguiente', ['class' => 'bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer']) !!}
                     </div>
                 </div>
             </div>

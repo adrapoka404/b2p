@@ -1150,6 +1150,16 @@ select{
   margin-bottom: 0.25rem;
 }
 
+.-my-2{
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .ml-3{
   margin-left: 0.75rem;
 }
@@ -1798,6 +1808,18 @@ select{
   border-right-width: 2px;
 }
 
+.border-t-0{
+  border-top-width: 0px;
+}
+
+.border-r-0{
+  border-right-width: 0px;
+}
+
+.border-l-0{
+  border-left-width: 0px;
+}
+
 .border-blue-500{
   --tw-border-opacity: 1;
   border-color: rgb(96 157 176 / var(--tw-border-opacity));
@@ -1821,6 +1843,11 @@ select{
 .border-b-gray-input{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(226 233 238 / var(--tw-border-opacity));
+}
+
+.border-b-blue-300{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(68 181 227 / var(--tw-border-opacity));
 }
 
 .bg-white{
