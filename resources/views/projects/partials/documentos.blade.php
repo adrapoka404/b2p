@@ -5,7 +5,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_ine]', []) !!}
+        {!! Form::file('documents[url_ine]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_ine')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -19,7 +19,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_curp]', []) !!}
+        {!! Form::file('documents[url_curp]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_curp')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -28,12 +28,12 @@
 
 <div class="flex flex-row my-2">
     <div class="mx-5 w-1/3">
-        {!! Form::label('url_rfc', __('RFC'), []) !!}
+        {!! Form::label('url_rfc', __('RFC'), ['accept'=>'application/pdf']) !!}
         <x-help>{{ __('Texto de ayuda para el campo nombre de persona responsable') }}</x-help>
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_rfc]', []) !!}
+        {!! Form::file('documents[url_rfc]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_rfc')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -47,7 +47,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_home]', []) !!}
+        {!! Form::file('documents[url_home]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_home')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -61,7 +61,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_tax_situation]', []) !!}
+        {!! Form::file('documents[url_tax_situation]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_tax_situation')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -75,7 +75,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_bureau_report]', []) !!}
+        {!! Form::file('documents[url_bureau_report]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_bureau_report')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -89,7 +89,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('documents[url_collateral]', []) !!}
+        {!! Form::file('documents[url_collateral]', ['accept'=>'application/pdf']) !!}
         @error('documents.url_collateral')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror

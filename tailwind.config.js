@@ -11,12 +11,19 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'fondo-home': "url('/img/fondo.png')",
                 'fondo-home-logo': "url('/img/logo_beezper_home.png')",
+                'fondo-projects': "url('/img/fondo_forms.png')",
+                'menu-project': "url('/img/menu_form.png')",
+                'menu-project-two': "url('/img/menu_selected.png')",
                 'fondo-home-registrate': "url('/img/icono_registrate.png')",
                 'fondo-home-elegir': "url('/img/icono_elegir.png')",
                 'fondo-home-invierte': "url('/img/icono_invierte.png')",
                 'fondo-home-gana': "url('/img/icono_gana.png')",
+                'registrate-animate': "url('/img/register/registrate_base.png')",
+                'registrate-boton': "url('/img/register/registrate_boton.png')",
+                'elegir-animate': "url('/img/icono_elegir.png')",
+                'invierte-animate': "url('/img/icono_invierte.png')",
+                'home-gana-animate': "url('/img/icono_gana.png')",
                 'fondo-home-footer': "url('/img/logo_beezper_blanco.png')",
                 'fondo-registro': "url('/img/edificios_registro.jpg')",
               },
@@ -45,6 +52,7 @@ module.exports = {
             'white':'#fff',
             'file':'#6199AB',
             'gray-input':'#E2E9EE',
+            'gray-hover':'#9E9E9F',
             'red':{
                 300:'#E90000',
                 400:'#C7272C',

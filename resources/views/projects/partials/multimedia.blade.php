@@ -20,7 +20,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia1]', []) !!}
+        {!! Form::file('multimedia[multimedia1]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia1')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -34,7 +34,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia2]', []) !!}
+        {!! Form::file('multimedia[multimedia2]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia2')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -48,7 +48,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia3]', []) !!}
+        {!! Form::file('multimedia[multimedia3]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia3')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -62,7 +62,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia4]', []) !!}
+        {!! Form::file('multimedia[multimedia4]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia4')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -76,7 +76,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia5]', []) !!}
+        {!! Form::file('multimedia[multimedia5]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia5')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -90,7 +90,7 @@
     </div>
 
     <div class="mx-5 w-2/3">
-        {!! Form::file('multimedia[multimedia6]', []) !!}
+        {!! Form::file('multimedia[multimedia6]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia6')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -105,7 +105,7 @@
 
     <div class="mx-5 w-2/3">
 
-        {!! Form::file('multimedia[multimedia7]', []) !!}
+        {!! Form::file('multimedia[multimedia7]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia7')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -120,7 +120,7 @@
 
     <div class="mx-5 w-2/3">
 
-        {!! Form::file('multimedia[multimedia8]', []) !!}
+        {!! Form::file('multimedia[multimedia8]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia8')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -135,7 +135,7 @@
 
     <div class="mx-5 w-2/3">
 
-        {!! Form::file('multimedia[multimedia9]', []) !!}
+        {!! Form::file('multimedia[multimedia9]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia9')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror
@@ -150,7 +150,7 @@
 
     <div class="mx-5 w-2/3">
 
-        {!! Form::file('multimedia[multimedia10]', []) !!}
+        {!! Form::file('multimedia[multimedia10]', ['accept'=>'image/*']) !!}
         @error('multimedia.multimedia10')
             <div class=" text-xs text-red-300">{{ $message }}</div>
         @enderror

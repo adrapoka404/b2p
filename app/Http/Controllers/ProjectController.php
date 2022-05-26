@@ -52,9 +52,22 @@ class ProjectController extends Controller
         $influences            = Influence::orderBy('id', 'asc')
             ->get();
 
-        return view('projects.create', compact('projecttypes', 'generes', 'nationalities', 'economicactivities', 'incomes', 'influences'));
+        $docs = [
+                    "1" => "Titulo de propiedad",
+                    "2" => "Factibilidad de servicios",
+                    "3" => "Permisos",
+                    "4" => "Licencia de funcionamiento",
+                    "5" => "Planos",
+                    "6" => "Contrato de arrendamiento",
+                    "7" => "Otro ¿Cúal?"
+        ];
+
+        return view('projects.steepone', compact('projecttypes', 'generes', 'nationalities', 'economicactivities', 'incomes', 'influences', 'docs'));
     }
 
+    public function steepone(Request $request){
+        return $request;
+    }
     /**
      * Store a newly created resource in storage.
      *
