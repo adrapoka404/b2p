@@ -42,7 +42,7 @@
                 </div>
             </div>
             {!! Form::open(['route' => 'steepone.store','atocomplete'=>'off', 'files' => true]) !!}
-            <div class="w-full ml-16">
+            <div class="w-full">
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::text('project[name]', old('project.name'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre del Proyecto']) !!}
