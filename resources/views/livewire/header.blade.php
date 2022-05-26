@@ -39,7 +39,7 @@
                 @endif
 
             </div>
-            <div class="hidden lg:inline-flex lg:w-1/4 items-end ">
+            <div class="hidden lg:inline-flex lg:w-1/4 items-center ">
                 @auth
                 <a href="{{ url('/dashboard') }}"
                     class="text-sm text-purple-200 dark:text-gray-500 underline hover:font-bold">{{__('Dashboard')}}</a>
