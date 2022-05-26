@@ -41,6 +41,7 @@
                     </label>
                 </div>
             </div>
+            {!! Form::open(['route' => 'steepone.store','atocomplete'=>'off', 'files' => true]) !!}
             <div class="w-full ml-16">
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
@@ -619,7 +620,7 @@
                     <div class=" w-2/3 mx-3 my-5">
                         <label for="project_render">
                             {{ __('Fotografías o render') }}
-                            {!! Form::file('project[render]', ['class' => 'bg-file', 'id' => 'project_render']) !!}
+                            {!! Form::file('project[render]', ['class' => '', 'id' => 'project_render']) !!}
                         </label>
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
@@ -629,12 +630,12 @@
                     </div>
                 </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 my-5">
+                    <div class=" w-2/3 mx-3 my-5 flex">
                         <div class="w-1/2">
-                            {!! Form::select('project[list_avala]', $docs, old('project.list_avala'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full outline-none hover:bg-gray-hover']) !!}
+                            {!! Form::select('project[list_avala]', $docs, old('project.list_avala'), ['class' => 'border-2 border-blue-600 rounded rounded-full  outline-none hover:bg-gray-hover']) !!}
                         </div>
                         <div class="w-1/2">
-                            {!! Form::file('project[doc_avala]', ['class' => 'bg-file', 'id' => 'project_render']) !!}
+                            {!! Form::file('project[doc_avala]', ['class' => '', 'id' => 'project_render']) !!}
                         </div>
 
                     </div>
@@ -642,6 +643,15 @@
                         <x-help_form>
                             {{ __('Escoger de la lista el tipo de documento y agregar el pdf.') }}
                         </x-help_form>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::submit('Guardar avance', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-3 text-sm cursor-pointer"]) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        {!! Form::submit('Siguiente', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-3 text-sm cursor-pointer"]) !!}
                     </div>
                 </div>
             </div>
