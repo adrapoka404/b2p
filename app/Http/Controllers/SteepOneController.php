@@ -34,10 +34,10 @@ class SteepOneController extends Controller
      */
     public function store(Request $request)
     {
-        /*
+        
         echo "<pre>";
             print_r($request->all());
-        echo "</pre>";*/
+        echo "</pre>";
         echo "redirect";
         return redirect()->route('steeptwo.create');
     }

@@ -1008,6 +1008,10 @@ select{
   margin-bottom: 0;
 }
 
+.invisible{
+  visibility: hidden;
+}
+
 .fixed{
   position: fixed;
 }
@@ -1039,16 +1043,16 @@ select{
   top: 0px;
 }
 
-.-top-5{
-  top: -1.25rem;
-}
-
 .z-0{
   z-index: 0;
 }
 
 .z-50{
   z-index: 50;
+}
+
+.z-10{
+  z-index: 10;
 }
 
 .col-span-6{
@@ -1059,20 +1063,16 @@ select{
   grid-column: span 2 / span 2;
 }
 
-.m-2{
-  margin: 0.5rem;
-}
-
 .-m-10{
   margin: -2.5rem;
 }
 
-.m-5{
-  margin: 1.25rem;
+.m-2{
+  margin: 0.5rem;
 }
 
-.m-6{
-  margin: 1.5rem;
+.m-5{
+  margin: 1.25rem;
 }
 
 .mx-auto{
@@ -1090,19 +1090,34 @@ select{
   margin-right: 1.25rem;
 }
 
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.mx-3{
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .my-28{
   margin-top: 7rem;
   margin-bottom: 7rem;
-}
-
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .my-auto{
@@ -1130,34 +1145,14 @@ select{
   margin-right: 2.5rem;
 }
 
-.mx-2{
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.mx-3{
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .-my-5{
   margin-top: -1.25rem;
   margin-bottom: -1.25rem;
-}
-
-.my-1{
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.-my-2{
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-}
-
-.my-3{
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
 }
 
 .ml-3{
@@ -1268,6 +1263,10 @@ select{
   margin-bottom: 1.25rem;
 }
 
+.-ml-10{
+  margin-left: -2.5rem;
+}
+
 .mt-16{
   margin-top: 4rem;
 }
@@ -1288,20 +1287,12 @@ select{
   margin-right: 2.5rem;
 }
 
-.-ml-10{
-  margin-left: -2.5rem;
-}
-
-.ml-16{
-  margin-left: 4rem;
+.mr-5{
+  margin-right: 1.25rem;
 }
 
 .-ml-4{
   margin-left: -1rem;
-}
-
-.mr-5{
-  margin-right: 1.25rem;
 }
 
 .block{
@@ -1631,10 +1622,6 @@ select{
   align-items: flex-start;
 }
 
-.items-end{
-  align-items: flex-end;
-}
-
 .items-center{
   align-items: center;
 }
@@ -1804,10 +1791,6 @@ select{
   border-bottom-width: 4px;
 }
 
-.border-r-2{
-  border-right-width: 2px;
-}
-
 .border-t-0{
   border-top-width: 0px;
 }
@@ -1820,19 +1803,23 @@ select{
   border-left-width: 0px;
 }
 
+.border-r-2{
+  border-right-width: 2px;
+}
+
 .border-blue-500{
   --tw-border-opacity: 1;
   border-color: rgb(96 157 176 / var(--tw-border-opacity));
 }
 
-.border-gray{
-  --tw-border-opacity: 1;
-  border-color: rgb(132 146 166 / var(--tw-border-opacity));
-}
-
 .border-blue-600{
   --tw-border-opacity: 1;
   border-color: rgb(70 189 214 / var(--tw-border-opacity));
+}
+
+.border-gray{
+  --tw-border-opacity: 1;
+  border-color: rgb(132 146 166 / var(--tw-border-opacity));
 }
 
 .border-b-black{
@@ -1905,22 +1892,16 @@ select{
   background-color: rgb(70 189 214 / var(--tw-bg-opacity));
 }
 
-.bg-pink{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 73 219 / var(--tw-bg-opacity));
-}
-
-.bg-gray{
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 146 166 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-25{
   --tw-bg-opacity: 0.25;
 }
 
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-fondo-projects{
+  background-image: url('/img/fondo_forms.png');
 }
 
 .bg-fondo-registro{
@@ -1951,16 +1932,44 @@ select{
   background-image: url('/img/logo_beezper_blanco.png');
 }
 
-.bg-menu-project-two{
-  background-image: url('/img/menu_selected.png');
+.bg-proyecto-on{
+  background-image: url('/img/proyecto_on.png');
 }
 
-.bg-menu-project{
-  background-image: url('/img/menu_form.png');
+.bg-empresa-off{
+  background-image: url('/img/empresa_off.png');
 }
 
-.bg-fondo-projects{
-  background-image: url('/img/fondo_forms.png');
+.bg-legal-off{
+  background-image: url('/img/legal_off.png');
+}
+
+.bg-representante-off{
+  background-image: url('/img/representante_off.png');
+}
+
+.bg-contrato-off{
+  background-image: url('/img/contrato_off.png');
+}
+
+.bg-proyecto-off{
+  background-image: url('/img/proyecto_off.png');
+}
+
+.bg-empresa-on{
+  background-image: url('/img/empresa_on.png');
+}
+
+.bg-legal-on{
+  background-image: url('/img/legal_on.png');
+}
+
+.bg-representante-on{
+  background-image: url('/img/representante_on.png');
+}
+
+.bg-contrato-on{
+  background-image: url('/img/contrato_on.png');
 }
 
 .from-red-300{
@@ -2016,10 +2025,6 @@ select{
 
 .p-4{
   padding: 1rem;
-}
-
-.p-5{
-  padding: 1.25rem;
 }
 
 .px-4{
@@ -2289,9 +2294,9 @@ select{
   color: rgb(233 0 0 / var(--tw-text-opacity));
 }
 
-.text-red-700{
+.text-gray{
   --tw-text-opacity: 1;
-  color: rgb(196 40 45 / var(--tw-text-opacity));
+  color: rgb(132 146 166 / var(--tw-text-opacity));
 }
 
 .text-blue-500{
@@ -2304,14 +2309,14 @@ select{
   color: rgb(68 181 227 / var(--tw-text-opacity));
 }
 
-.text-purple-200{
-  --tw-text-opacity: 1;
-  color: rgb(92 123 255 / var(--tw-text-opacity));
-}
-
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-purple-200{
+  --tw-text-opacity: 1;
+  color: rgb(92 123 255 / var(--tw-text-opacity));
 }
 
 .text-green{
@@ -2322,11 +2327,6 @@ select{
 .text-blue-600{
   --tw-text-opacity: 1;
   color: rgb(70 189 214 / var(--tw-text-opacity));
-}
-
-.text-gray{
-  --tw-text-opacity: 1;
-  color: rgb(132 146 166 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -2464,6 +2464,12 @@ select{
   transition-duration: 150ms;
 }
 
+.transition-opacity{
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-150{
   transition-duration: 150ms;
 }
@@ -2517,18 +2523,14 @@ select{
   background-color: rgb(196 40 45 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-purple-200:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(92 123 255 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-gray-hover:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(158 158 159 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-menu-project-two:hover{
-  background-image: url('/img/menu_selected.png');
+.hover\:bg-purple-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(92 123 255 / var(--tw-bg-opacity));
 }
 
 .hover\:font-semibold:hover{
@@ -2917,6 +2919,10 @@ select{
   .lg\:-my-px{
     margin-top: -1px;
     margin-bottom: -1px;
+  }
+
+  .lg\:block{
+    display: block;
   }
 
   .lg\:flex{

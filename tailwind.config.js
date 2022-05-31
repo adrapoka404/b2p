@@ -13,8 +13,24 @@ module.exports = {
             backgroundImage: {
                 'fondo-home-logo': "url('/img/logo_beezper_home.png')",
                 'fondo-projects': "url('/img/fondo_forms.png')",
-                'menu-project': "url('/img/menu_form.png')",
-                'menu-project-two': "url('/img/menu_selected.png')",
+                'proyecto-on': "url('/img/proyecto_on.png')",
+                'proyecto-off': "url('/img/proyecto_off.png')",
+                'doc-proyecto-on': "url('/img/doc_proyecto_on.png')",
+                'doc-proyecto-off': "url('/img/doc_proyecto_off.png')",
+                'legal-on': "url('/img/legal_on.png')",
+                'legal-off': "url('/img/legal_off.png')",
+                'doc-legal-on': "url('/img/doc_legal_on.png')",
+                'doc-legal-off': "url('/img/doc_legal_off.png')",
+                'representante-off': "url('/img/representante_off.png')",
+                'representante-on': "url('/img/representante_on.png')",
+                'doc-representante-off': "url('/img/doc_representante_off.png')",
+                'doc-representante-on': "url('/img/doc_representante_on.png')",
+                'empresa-off': "url('/img/empresa_off.png')",
+                'empresa-on': "url('/img/empresa_on.png')",
+                'doc-empresa-off': "url('/img/doc_empresa_off.png')",
+                'doc-empresa-on': "url('/img/doc_emmpresa_on.png')",
+                'contrato-off': "url('/img/contrato_off.png')",
+                'contrato-on': "url('/img/contrato_on.png')",
                 'fondo-home-registrate': "url('/img/icono_registrate.png')",
                 'fondo-home-elegir': "url('/img/icono_elegir.png')",
                 'fondo-home-invierte': "url('/img/icono_invierte.png')",
@@ -70,5 +86,8 @@ module.exports = {
           },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
+        ],
 };

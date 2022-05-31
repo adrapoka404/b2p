@@ -53,7 +53,26 @@ class SteepTwoController extends Controller
                     "7" => "Otro ¿Cúal?"
         ];
 
-        return view('projects.steeptwo', compact('projecttypes', 'generes', 'nationalities', 'economicactivities', 'incomes', 'influences', 'docs'));
+        $companies = [
+                    "1" => "Adquisición de equipo y maquinaria",
+                    "2" => "Adquisición de insumos",
+                    "3" => "Comercialización",
+                    "4" => "Construcción",
+                    "5" => "Productos y Servicios",
+                    "6" => "Tecnología",
+                    "7" => "Transporte"
+                    ];
+        
+        
+        $thisYear = date('Y');
+        $years = [
+            "1" => $thisYear - 2,
+            "2" => $thisYear - 1,
+            "3" => $thisYear
+
+        ];
+
+        return view('projects.steeptwo', compact('projecttypes', 'generes', 'nationalities', 'economicactivities', 'incomes', 'influences', 'docs', 'companies', 'years'));
     }
 
     /**
@@ -64,7 +83,8 @@ class SteepTwoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "redirect steep three";
+        return redirect()->route('steepthree.create');
     }
 
     /**

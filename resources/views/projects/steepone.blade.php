@@ -1,28 +1,8 @@
 <x-app-layout>
     <div class=" w-full mx-auto py-10 sm:px-6 lg:px-8 bg-fixed bg-fondo-projects bg-cover">
-        <div
-            class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
-            <div class="w-1/8 ">
-                <div class="bg-menu-project-two bg-cover w-20 h-20 -m-10 text-center items-start text-xs pt-5 text-white cursor-pointer ">
-                    icono
-                </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-            </div>
-            {!! Form::open(['route' => 'steepone.store','atocomplete'=>'off', 'files' => true]) !!}
+        <div  class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
+             <x-menu-project :menu="request()->route()->getName()"/>
+            {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true]) !!}
             <div class="w-full">
                 <div class="">
                     <x-subtitle_form>
@@ -60,7 +40,7 @@
                     </div>
                 </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input rounded-full py-3">
+                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-3 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Características') }}
                         </div>
@@ -171,7 +151,7 @@
                 </div>
 
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
+                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Tipo de aportación') }}
                         </div>
@@ -243,8 +223,7 @@
                 </div>
 
                 <div class="flex">
-                    <div
-                        class=" w-2/3 mx-3 mt-5 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
+                    <div class=" w-2/3 ml-3 mt-5 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la inversión') }}
                         </div>
@@ -349,7 +328,7 @@
                 </div>
 
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
+                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la deuda') }}
                         </div>
@@ -423,7 +402,7 @@
                     <x-subtitle_form>
                         {{ __('Inversión') }}
                     </x-subtitle_form>
-                    
+
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
@@ -466,7 +445,7 @@
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-gray ">
+                        <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
                             <div>{{ __('Concepto') }}</div>
                             <div>{{ __('Características') }}</div>
                             <div>{{ __('Monto') }}</div>
@@ -562,12 +541,12 @@
                         <div>{{ __('Ganancias') }}</div>
                         {{ __('Describe lo que se ofrece a los que inviertan en el proyecto.') }}
                     </x-subtitle_form>
-                    
+
                 </div>
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-gray ">
+                        <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
                             <div>{{ __('Temporalidad') }}</div>
                             <div>{{ __('% de ganacia') }}</div>
                             <div></div>
@@ -605,11 +584,16 @@
                     </div>
                 </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 my-5">
-                        <label for="project_render">
-                            {{ __('Fotografías o render') }}
+                    <div class=" w-2/3 mx-3 my-5 flex">
+                        <div class="w-1/2">
+                            <label for="project_render">
+                                {{ __('Fotografías o render') }}
+                            </label>
+                        </div>
+                        <div class="w-1/2">
                             {!! Form::file('project[render]', ['class' => '', 'id' => 'project_render']) !!}
-                        </label>
+                        </div>
+
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
@@ -636,11 +620,11 @@
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        
+
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
-                        {!! Form::submit('Guardar avance', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer"]) !!}
-                        {!! Form::submit('Siguiente', ["class"=> "bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer"]) !!}
+                        {!! Form::submit('Guardar avance', ['class' => 'bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer']) !!}
+                        {!! Form::submit('Siguiente', ['class' => 'bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer']) !!}
                     </div>
                 </div>
             </div>

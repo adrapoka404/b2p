@@ -59,7 +59,7 @@ Route::resource('users', UserController::class)->names('users');
 Route::resource('usersrole', UserRoleController::class)->names('usersrole');
 Route::resource('rolespermission', RolePermissionController::class)->names('rolespermission');
 Route::resource('rolespermission', RolePermissionController::class)->names('rolespermission');
-Route::resource('projects', ProjectController::class)->names('projects');
+Route::resource('projects', ProjectController::class)->names('projects')->middleware(['auth:sanctum', 'verified']);
 Route::resource('testprojects', ProjectController::class)->names('testprojects');
 Route::resource('projecttypes', ProjectTypesController::class)->names('projecttypes');
 Route::resource('verificarcp', VerificarcpController::class)->names('verificarcp');

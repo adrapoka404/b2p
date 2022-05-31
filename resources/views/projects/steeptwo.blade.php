@@ -1,34 +1,8 @@
 <x-app-layout>
     <div class=" w-full mx-auto py-10 sm:px-6 lg:px-8 bg-fixed bg-fondo-projects bg-cover">
-        <div
-            class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
-            <div class="w-1/8 ">
-                <div
-                    class="bg-menu-project bg-cover w-20 h-20 -m-10 text-center items-start text-xs pt-5 text-white cursor-pointer ">
-                    icono
-                </div>
-                <div
-                    class=" bg-menu-project-two bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div
-                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div
-                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div
-                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-                <div
-                    class=" bg-menu-project bg-cover w-20 h-20 -ml-10 my-10 text-center text-xs pt-5 text-black cursor-pointer text-clip">
-                    icono
-                </div>
-            </div>
-            {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true]) !!}
+        <div class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
+            <x-menu-project :menu="request()->route()->getName()"/>
+            {!! Form::open(['route' => 'steeptwo.store', 'atocomplete' => 'off', 'files' => true]) !!}
             <div class="w-full">
                 <div class="">
                     <x-subtitle_form>
@@ -93,599 +67,369 @@
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::select('project[proyect_type_id]', $projecttypes, old('project.project_type_id'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full outline-none hover:bg-gray-hover']) !!}
+                        {!! Form::textarea('company[whynoinfunction]', old('company.whynoinfunction'), ['class' => 'border-2 border-blue-600 rounded rounded-2xl w-full hover:bg-gray-hover', 'placeholder' => __('En caso de NO estar en funcionamiento registrar el motivo'), 'rows' => 5]) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Escoger el tipo de la lista') }}
+                            {{ __('En caso de NO estar en funcionamiento registrar el motivo') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::textarea('project[description]', old('project.description'), ['class' => 'border-2 border-blue-600 rounded rounded-2xl w-full hover:bg-gray-hover', 'placeholder' => __('* Descripción del proyecto'), 'rows' => 5]) !!}
+                        {!! Form::text('company[rfc]', old('project.rfc'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* RFC']) !!}
                     </div>
-                    <div class=" w-1/3 mx-2 my--5">
+                    <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Escribe en qué conciste tu proyecto; Máximo 600 caracteres') }}
+                            {{ __('Anotar el registro Federal de Contribuyentes de la empresa') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input rounded-full py-3">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Características') }}
-                        </div>
-                        <div class="w-1/2">
-                            {{ __('Descripción') }}
-                        </div>
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[siteweb]', old('project.siteweb'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Sitio web']) !!}
                     </div>
-                    <div class=" w-1/3 mx-2">
+                    <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Detalla en qué consiste el proyecto, es decir describe sus principales atributos para convencer a los inversionistas de participar en tu proyecto.') }}
+                            {{ __('Anotar el sitio web de la empresa') }}
                         </x-help_form>
                     </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[fb]', old('project.fb'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Facebook']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Anotar el Facebook de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[tw]', old('project.tw'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Twitter']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Anotar el Twitter de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[yt]', old('project.yt'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'YouTube']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Anotar el YouTube de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[tt]', old('project.tt'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'TikTok']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Anotar el TikTok de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::text('company[inst]', old('project.inst'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Instagram']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Anotar el Instagram de la empresa') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::select('company[type]', $companies, old('company.type'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Giro de la empresa: Escoger el tipo de la lista') }}
+                        </x-help_form>
+                    </div>
+                </div>
 
-                </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('* Opción 1') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[option1]', old('project.option1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
+                    <div class=" w-2/3 mx-3 my-5">
+                        @foreach ($years as $year)
+                            <div class="flex">
+                                <div>
+                                    {{ __('Ganancias: ' . $year) }}
+                                </div>
+                                {!! Form::number('company[ganacias_' . $year . ']', old("company.ganancias_'.$year.'"), ['class' => 'border-2 border-blue-600 rounded rounded-full w-1/2 hover:bg-gray-hover']) !!}
+                                <div>
+
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('* Opción 2') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[option2]', old('project.option2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('* Opción 3') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[option3]', old('project.option3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 4') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[option4]', old('project.option4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opcional']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 5') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[option5]', old('project.option5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opcional']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 my-5 mx-3 rounded-2xl border border-blue-600">
-                        <div class="w-1/3 m-5">
-                            {{ __('* Ubicación física') }}
-                            {!! Form::text('project[location]', old('project.location'), ['class' => 'border-1 border-blue-600 rounded-xl mt-10 hover:bg-gray-hover   ', 'placeholder' => 'Dirección']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 my-5">
+                    <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Marcar en el mapa la ubicación del proyecto') }}
+                            {{ __('Registrar las ganancias anuales de los últimos 3 años, en caso de NO estar en funcionamiento registrar las ganancias anuales esperadas.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::number('company[ganacias_esperadas]', old('company.ganancias_esperadas'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Ganancias esperadas']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('En caso de NO estar en funcionamiento registrar las ganancias anuales esperadas.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::number('company[empleados]', old('company.empleados'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'Número de empleados']) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Registrar el número de empleados activos, en caso de NO estar en funcionamiento registrar el número de empleados que se necesitan.') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="">
                     <x-subtitle_form>
-                        <div>{{ __('Capital') }}</div>
-                        {{ __('Desglosa los siguientes montos relacionados con el costo del proyecto y su origen:') }}
+                        <div>
+                            {{ __('Dirección') }}
+                        </div>
+                        {{ __('Debe coincidir con el comprobante de domicilio.') }}
+
                     </x-subtitle_form>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[goal]', old('project.goal'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Costo total del Proyecto']) !!}
+                        {!! Form::text('company[calle]', old('company.calle'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Calle']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Registra cuánto costará el proyecto completo, incluyendo el monto que tu aportarás.') }}
+                            {{ __('Registrar nombre de la Calle o Avenida') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[goal_two]', old('project.goal_two'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* ¿Cuánto será el monto de tu inversión?']) !!}
+                        {!! Form::text('company[noexterior]', old('company.noexterior'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* No. Exterior']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Registra cuánto dinero aportarás al proyecto.') }}
-                        </x-help_form>
-                    </div>
-                </div>
-
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Tipo de aportación') }}
-                        </div>
-                        <div class="w-1/2">
-                            {{ __('Monto') }}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 mx-2">
-                        <x-help_form>
-                            {{ __('Especifica si tu inversión corresponde a una propiedad, local, personal, etc.') }}
-                        </x-help_form>
-                    </div>
-
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('* Opción 1') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input1]', old('project.input1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 2') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input2]', old('project.input2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 3') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input3]', old('project.input3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 4') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input4]', old('project.input4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 5') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input5]', old('project.input5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-
-                <div class="flex">
-                    <div
-                        class=" w-2/3 mx-3 mt-5 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Origen de la inversión') }}
-                        </div>
-                        <div class="w-1/2">
-                            {{ __('Monto') }}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 mx-2 my-5">
-                        <x-help_form>
-                            {{ __('Especificar si es un préstamo, ahorro, reinversión.') }}
-                        </x-help_form>
-                    </div>
-
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('* Opción 1') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input_origin1]', old('project.input_origin1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 2') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input_origin2]', old('project.input_origin2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 3') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input_origin3]', old('project.input_origin3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 4') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input_origin4]', old('project.input_origin4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Opción 5') }}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[input_origin5]', old('project.input_origin5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[request_max]', old('project.request_max'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto máximo solicitado']) !!}
-                    </div>
-                    <div class=" w-1/3 mx-2 my-5">
-                        <x-help_form>
-                            {{ __('Registrar la cantidad de inversión ideal requerida para el proyecto. ') }}
+                            {{ __('Registrar número exterior') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[request_min]', old('project.request_min'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto mínimo  solicitado']) !!}
+                        {!! Form::text('company[nointerior]', old('company.nointerior'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => 'No. interior']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Registrar la cantidad de inversión mínima requerida para el proyecto. No puede ser menor del 20% del máximo.') }}
+                            {{ __('Registrar número interior') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <label for="project_debt" class="cursor-pointer">
-                            {!! Form::checkbox('project[debt]', old('project.debt'), false, ['class' => 'border-2 border-blue-600 w-5 h-5 mr-5', 'id' => 'project_debt']) !!}
-                            {{ __('El proyecto tiene algún tipo de endeudamiento') }}
-                        </label>
+                        {!! Form::number('company[cp]', old('company.cp'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Código postal']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Elegir si en caso de que el proyecto ya cuente con algún préstamo.') }}
+                            {{ __('Código postal') }}
                         </x-help_form>
                     </div>
-                </div>
-
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600 bg-gray-input py-1 rounded-full">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {{ __('Origen de la deuda') }}
-                        </div>
-                        <div class="w-1/2">
-                            {{ __('Monto') }}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 mx-2">
-                        <x-help_form>
-                            {{ __('En caso de que si tenga deuda describir el monto y origen de la deuda. Es decir, escribir banco, préstamo familiar, asociados, etc.') }}
-                        </x-help_form>
-                    </div>
-
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origin_debt1]', old('project.origin_debt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[amount_origin_debt1]', old('project.amount_origin_debt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origin_debt2]', old('project.origin_debt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[amount_origin_debt2]', old('project.amount_origin_debt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origin_debt3]', old('project.origin_debt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[amount_origin_debt3]', old('project.amount_origin_debt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origin_debt4]', old('project.origin_debt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[amount_origin_debt4]', old('project.amount_origin_debt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="flex">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origin_debt5]', old('project.origin_debt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[amount_origin_debt5]', old('project.amount_origin_debt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 "></div>
-                </div>
-                <div class="">
-                    <x-subtitle_form>
-                        {{ __('Inversión') }}
-                    </x-subtitle_form>
-
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <label for="">
-                            {{ __('Plazo para recabar la inversión.') }}
-                            {!! Form::selectRange('project[estimated_term]', 1, 6, old('project.estimated_term'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover']) !!}
-                        </label>
+                        {!! Form::select('company[colonia]', [], false, ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('No puede superar los 6 meses ni ser menor a 1 mes.') }}
+                            {{ __('* Colonia') }}
                         </x-help_form>
                     </div>
                 </div>
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <label for="">
-                            {{ __('Plazo para ejecutar el proyecto') }}
-                            {!! Form::selectRange('project[estimated_ejecution]', 1, 36, old('project.estimated_ejecution'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover']) !!}
-                        </label>
+                        {!! Form::text('company[referencia]', old('company.referencia'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Referencia']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('No puede superar los 36 meses, ni ser menor a 6 meses incluyendo el tiempo para conseguir la inversión.') }}
+                            {{ __('* Referencia') }}
                         </x-help_form>
                     </div>
                 </div>
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[min_investment]', old('project.min_investment'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Inversión mínima solicitada']) !!}
+                        {!! Form::text('company[telefono]', old('company.telefono'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Teléfono']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Mínimo solicitado por inversionista, no puede ser menor a $1,000.00 ') }}
+                            {{ __('* Se considerará como medio de contacto. Registrar los 10 dígitos sin espacios') }}
                         </x-help_form>
                     </div>
                 </div>
 
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-gray ">
-                            <div>{{ __('Concepto') }}</div>
-                            <div>{{ __('Características') }}</div>
-                            <div>{{ __('Monto') }}</div>
-                            <div>{{ __('%') }}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Contratación de personal') }}</div>
-                            <div>{!! Form::text('project[desgloce_personal]', old('project.desgloce_personal'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_personal]', old('project.amount_personal'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_personal]', old('project.porcent_personal'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Mano de obra') }}</div>
-                            <div>{!! Form::text('project[desgloce_mobra]', old('project.desgloce_mobra'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_mobra]', old('project.amount_mobra'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_mobra]', old('project.porcent_mobra'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Insumos/Material') }}</div>
-                            <div>{!! Form::text('project[desgloce_insumos]', old('project.desgloce_insumos'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_insumos]', old('project.amount_insumos'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_insumos]', old('project.porcent_insumos'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Equipo') }}</div>
-                            <div>{!! Form::text('project[desgloce_equipo]', old('project.desgloce_equipo'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_equipo]', old('project.amount_equipo'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_equipo]', old('project.porcent_equipo'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Mobiliario') }}</div>
-                            <div>{!! Form::text('project[desgloce_mobiliario]', old('project.desgloce_mobiliario'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_mobiliario]', old('project.amount_mobiliario'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_mobiliario]', old('project.porcent_mobiliario'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Construcción') }}</div>
-                            <div>{!! Form::text('project[desgloce_construccion]', old('project.desgloce_construccion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_construccion]', old('project.amount_construccion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_construccion]', old('project.porcent_construccion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Reparaciones') }}</div>
-                            <div>{!! Form::text('project[desgloce_reparaciones]', old('project.desgloce_reparaciones'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_reparaciones]', old('project.amount_reparaciones'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_reparaciones]', old('project.porcent_reparaciones'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Arrendamiento') }}</div>
-                            <div>{!! Form::text('project[desgloce_arrendamiento]', old('project.desgloce_arrendamiento'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_arrendamiento]', old('project.amount_arrendamiento'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_arrendamiento]', old('project.porcent_arrendamiento'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Adquisición de inmueble') }}</div>
-                            <div>{!! Form::text('project[desgloce_inmueble]', old('project.desgloce_inmueble'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_inmueble]', old('project.amount_inmueble'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_inmueble]', old('project.porcent_inmueble'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Permisos y trámites') }}</div>
-                            <div>{!! Form::text('project[desgloce_tramites]', old('project.desgloce_tramites'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_tramites]', old('project.amount_tramites'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_tramites]', old('project.porcent_tramites'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Software') }}</div>
-                            <div>{!! Form::text('project[desgloce_software]', old('project.desgloce_software'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_software]', old('project.amount_software'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_software]', old('project.porcent_software'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Otros') }}</div>
-                            <div>{!! Form::text('project[desgloce_otros]', old('project.desgloce_otros'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[amount_otros]', old('project.amount_otros'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[porcent_otros]', old('project.porcent_otros'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Total') }}</div>
-                            <div>&nbsp;</div>
-                            <div>{{ __('Monto Solicitado máximo') }}</div>
-                            <div>{{ __('100%') }}</div>
-                        </div>
+                        {!! Form::text('company[correo]', old('company.correo'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Correo electrónico']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Escoger todos los conceptos que apliquen a su proyecto y desglosar las características de cada uno. El total debe coincidir con el monto máximo solicitado. ') }}
+                            {{ __('* Se considerará como medio de contacto') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="">
                     <x-subtitle_form>
-                        <div>{{ __('Ganancias') }}</div>
-                        {{ __('Describe lo que se ofrece a los que inviertan en el proyecto.') }}
+                        {{ __('Documentos de la empresa') }}
+
                     </x-subtitle_form>
-
                 </div>
-
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-gray ">
-                            <div>{{ __('Temporalidad') }}</div>
-                            <div>{{ __('% de ganacia') }}</div>
-                            <div></div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Anual') }}</div>
-                            <div>{!! Form::text('project[porcent_anual]', old('project.porcent_anual'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('', '', ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Semestral') }}</div>
-                            <div>{!! Form::text('project[porcent_semestral]', old('project.porcent_semestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('', '', ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Trimestral') }}</div>
-                            <div>{!! Form::text('project[porcent_trimestral]', old('project.porcent_trimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('', '', ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Bimestral') }}</div>
-                            <div>{!! Form::text('project[porcent_bimestral]', old('project.porcent_bimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('', '', ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Desinversión') }}</div>
-                            <div>{!! Form::text('project[porcent_desinversion]', old('project.porcent_desinversion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('', '', ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
+                        {!! Form::file('company[acta_constitutiva]', []) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Se puede elegir más de un concepto de temporalidad es decir puede dar ganancias trimestrales de cierto % y ganancia anual de otro porcentaje ó ganancias anuales y al final del proyecto un % más el monto de desinversión.') }}
+                            {{ __('Copia simple, completa en tamaño carta y totalmente legible, sin tachaduras, enmiendas o cualquier otra alteración del Acta Constitutiva de la empresa, la cual deberá de contener el objeto social, inscrita en el Registro Público de Comercio y su última modificación. Deberá cargar la imagen del Acta Constitutiva de la empresa en formato pdf legible con un peso máximo de 2MB') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        <label for="project_render">
-                            {{ __('Fotografías o render') }}
-                            {!! Form::file('project[render]', ['class' => '', 'id' => 'project_render']) !!}
-                        </label>
+                        {!! Form::file('company[carta_poder]', []) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Subir pdf o jpeg') }}
+                            {{ __('Carta Poder del representante legal. De ser necesario deberá cargar el documento en formato pdf legible con un peso máximo de 2MB') }}
                         </x-help_form>
                     </div>
                 </div>
                 <div class="flex">
-                    <div class=" w-2/3 mx-3 my-5 flex">
-                        <div class="w-1/2">
-                            {!! Form::select('project[list_avala]', $docs, old('project.list_avala'), ['class' => 'border-2 border-blue-600 rounded rounded-full  outline-none hover:bg-gray-hover']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::file('project[doc_avala]', ['class' => '', 'id' => 'project_render']) !!}
-                        </div>
-
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[rfc]', []) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
-                            {{ __('Escoger de la lista el tipo de documento y agregar el pdf.') }}
+                            {{ __('Copia simple, completa y legible de la Solicitud de Inscripción en el Registro Federal de Contribuyentes. Deberá cargar la imagen del RFC de la empresa de no más de 3 meses en formato pdf legible con un peso máximo de 2MB') }}
                         </x-help_form>
                     </div>
                 </div>
-
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[aviso_modificacion]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Último aviso de cambio o modificación. Deberá cargar la imagen en formato pdf legible con un peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[cedula]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Copia simple, completa, de fecha de impresión no mayor a 3 meses y legible de la Cédula de Registro Federal de Contribuyentes. Deberá cargar en formato pdf el documento con un peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[constancia_fiscal]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('CONSTANCIA DE SITUACIÓN FISCAL actualizada al mes en el que realiza la solicitud.  Deberá cargar en formato pdf el documento con un peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[declaracion_fiscal]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Copia de la Declaración Fiscal del ultomo ejercicio, con sus anexos completos; con acuse de recibo del SAT, a través de internet con la cadena original de pago o recibo del banco y sello de pagado ante institución bancaria. Deberá cargar en formato pdf el documento con un peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[declaracion_mensual]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Copia de la Declaración mensual del Impuesto sobre la Renta correspondiente a cualquiera de los últimos tres meses anteriores a la fecha de las propuestas, con recibo de banco y sello de pagado ante institución bancaria o acuse de recibo del SAT, a través de internet, con cadena original de pago. Deberá cargar en formato pdf el documento con un peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[comprobante_domicilio]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Documento Comprobante de domicilio actualizado al mes en el que realiza la solicitud. Deberá cargar la imagen del comprobante de domicilio de la empresa en formato pdf legible con un peso máximo de 2 MB. Deberá coincidir con la registrada en el RFC.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[datos_bancarios]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Hoja de Datos bancarios. Deberá cargar en formato pdf el documento con un peso máximo de 2MB.') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[cv]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Currículum de la empresa en el cual se aprecien los siguientes puntos:') }}
+                            <ul class="list-disc">
+                                <li>{{ __('Antigüedad de la empresa.') }} </li>
+                                <li>{{ __('Dirección, números telefónicos, correos electrónicos, página web.') }}</li>
+                                <li>{{ __('Recursos Humanos con número de IMSS.') }}</li>
+                            </ul>
+                            {{ __('Principales clientes (cuatro mínimos) (indicar nombre de la empresa o dependencia, dirección, nombre del titular de la empresa receptora del servicio, números telefónicos y de fax y correo electrónico). Deberá cargar en formato pdf el documento con peso máximo de 2MB') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[foto_exterior]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Foto del exterior de la empresa. Subir en archivo jpeg o pdf') }}
+                        </x-help_form>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class=" w-2/3 mx-3 my-5">
+                        {!! Form::file('company[foto_interior]', []) !!}
+                    </div>
+                    <div class=" w-1/3 mx-2 my-5">
+                        <x-help_form>
+                            {{ __('Foto del interior de la empresa. Subir en archivo jpeg o pdf') }}
+                        </x-help_form>
+                    </div>
+                </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
 

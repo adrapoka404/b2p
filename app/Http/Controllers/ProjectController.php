@@ -38,7 +38,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $projecttypes       = ProjectType::orderBy('name', 'asc')->get();
+        $projecttypes       = ProjectType::orderBy('name', 'asc')->get('name');
         $generes            = Genere::orderBy('id', 'asc')->get();
         $nationalities      = Nationality::orderBy('id', 'asc')->get();
         $economicactivities = EconomicActivity::where('status', 1)
