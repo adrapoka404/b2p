@@ -1,7 +1,10 @@
 <x-app-layout>
     <div class=" w-full mx-auto py-10 sm:px-6 lg:px-8 bg-fixed bg-fondo-projects bg-cover">
-        <div  class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
-             <x-menu-project :menu="request()->route()->getName()"/>
+        <div
+            class=" max-w-7xl  mx-auto hidden sm:flex  bg-white bg-cover rounded-md border-2 border-blue-600 font-cairo ">
+            <x-menu-project :menu="request()
+                ->route()
+                ->getName()" />
             {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true]) !!}
             <div class="w-full">
                 <div class="">
@@ -11,7 +14,7 @@
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::text('project[name]', old('project.name'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre del Proyecto']) !!}
+                        {!! Form::text('project[name]', 'Adraxia'/*old('project.name')*/, ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre del Proyecto']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
@@ -21,7 +24,19 @@
                 </div>
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::select('project[proyect_type_id]', $projecttypes, old('project.project_type_id'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full outline-none hover:bg-gray-hover']) !!}
+                        <select name="project[project_type_id]"
+                            class="border-2 border-blue-600 rounded rounded-full w-full outline-none hover:bg-gray-hover">
+                            <option>{{ __('Tipo de proyecto') }}</option>
+                            @foreach ($projecttypes as $pt)
+                                @if ($pt->id == old('project.project_type_id'))
+                                    <option value="{{ $pt->id }}" selected>{{ $pt->name }}</option>
+                                @else
+                                    <option value="{{ $pt->id }}">{{ $pt->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        @foreach ($projecttypes as $pt)
+                        @endforeach
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
@@ -604,7 +619,16 @@
                 <div class="flex">
                     <div class=" w-2/3 mx-3 my-5 flex">
                         <div class="w-1/2">
-                            {!! Form::select('project[list_avala]', $docs, old('project.list_avala'), ['class' => 'border-2 border-blue-600 rounded rounded-full  outline-none hover:bg-gray-hover']) !!}
+                            <select name="project[list_avala" class="border-2 border-blue-600 rounded-full  outline-none hover:bg-gray-hover">
+                                <option>{{ __('Documento que avala el proyecto') }}</option>
+                                @foreach ($docs as $doc)
+                                    @if ($doc->id == old('project.list_avala'))
+                                        <option value="{{ $doc->id }}" selected>{{ $doc->name }}</option>
+                                    @else
+                                        <option value="{{ $doc->id }}">{{ $doc->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
                         </div>
                         <div class="w-1/2">
                             {!! Form::file('project[doc_avala]', ['class' => '', 'id' => 'project_render']) !!}
