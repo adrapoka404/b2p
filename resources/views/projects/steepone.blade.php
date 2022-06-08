@@ -943,6 +943,7 @@
                         <x-help_form>
                             {{ __('Subir pdf o jpeg') }}
                         </x-help_form>
+                        aqui deberia haber un problema
                         @error('project.render')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
@@ -972,7 +973,7 @@
                         <x-help_form>
                             {{ __('Escoger de la lista el tipo de documento y agregar el pdf.') }}
                         </x-help_form>
-                        @error('project.project.list_avala')
+                        @error('project.list_avala')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.doc_avala')
@@ -991,7 +992,8 @@
                     </div>
                 </div>
             </div>
-
+            
+            <x-jet-validation-errors />
         </div>
     </div>
 </x-app-layout>

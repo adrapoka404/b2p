@@ -126,9 +126,9 @@ class StoreProject extends FormRequest
             'project.porcents.bimestral'            => 'nullable|numeric',
             'project.porcents.desinversion_porcent' => 'nullable|numeric',
             'project.porcents.desinversion'         => 'nullable|numeric',
-            'project.render'                        => 'requiered|mime:jpeg,pdf',
-            'project.doc_avala'                     => 'requiered|mime:pdf',
-            'project.project_list_avala'            => 'requierd|numeric',
+            'project.render'                        => 'required|mimes:jpeg,pdf',
+            'project.doc_avala'                     => 'required|mimes:pdf',
+            'project.list_avala'            => 'required|numeric',
         ];
     }
 
@@ -199,7 +199,7 @@ class StoreProject extends FormRequest
             'project.estimated_ejecution.required'           => 'El plazo para la ejecución del proyecto es obligatorio',
             'project.estimated_ejecution.between'           => 'El plazo para la ejecución del proyecto debe ser de 1 a 36 meses',
             'project.min_investment.required'                => 'La inversión minima para inversionistas es obligatoria',
-            'project.min_investment.min'                => 'La inversión minima para inversionistas debe ser mayor o igual a $ 1,000.00',
+            'project.min_investment.min'                    => 'La inversión minima para inversionistas debe ser mayor o igual a $ 1,000.00',
             'project.personal.amount.numeric'               => 'El campo monto de la caracteristica de contratación personal debe ser numerico',
             'project.personal.porcent.numeric'              => 'El campo porcentaje de la característica de contratación de personal debe ser numerico',
             'project.mobra.amount.numeric'                  => 'El campo monto de la caracteristica de mano de obra debe ser numerico',
@@ -235,10 +235,11 @@ class StoreProject extends FormRequest
             'project.porcents.desinversion_porcent.numeric' => 'El campo de porcentaje en columna de ganancia de la temporalidad desinversión debe ser numerico',
             'project.porcents.desinversion.numeric'         => 'El campo de monto en columna de ganancia de la temporalidad desinversión debe ser numerico',
             'project.render.required'                        => 'El campo de fotografía o render es obligatorio',
-            'project.render.mime'                        => 'El campo de fotografía o render debe ser contener la extension .jpeg ó .pdf',
+            'project.render.mimes'                        => 'El campo de fotografía o render debe ser contener la extension .jpeg ó .pdf',
             'project.doc_avala.required'                     => 'El archivo que avala el proyecto es obligatorio',
-            'project.doc_avala.mime'                     => 'El archivo que avala el proyecto debe contener la extension .pdf',
-            'project.project_list_avala.required'            => 'Debe elegir el documento que avala el proyecto en la lista',
+            'project.doc_avala.mimes'                     => 'El archivo que avala el proyecto debe contener la extension .pdf',
+            'project.list_avala.required'            => 'Debe elegir el documento que avala el proyecto en la lista',
+            'project.list_avala.numeric'            => 'Debe elegir el documento que avala el proyecto en la lista',
         ];
     }
 }
