@@ -6,13 +6,13 @@
                 ->route()
                 ->getName()" />
             {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true]) !!}
-            <div class="w-full">
-                <div class="">
+            <div class="w-full mx-5">
+                <div class=" mx-5">
                     <x-subtitle_form>
                         {{ __('Información del proyecto') }}
                     </x-subtitle_form>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::text('project[name]', old('project.name'), ['class' => 'border-2  border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Nombre del Proyecto']) !!}
                         @error('project.name')
@@ -29,7 +29,7 @@
 
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <select name="project[project_type_id]"
                             class="border-2 border-blue-600 rounded rounded-full w-full outline-none hover:bg-gray-hover">
@@ -57,7 +57,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::textarea('project[description]', old('project.description'), ['class' => 'border-2 border-blue-600 rounded rounded-2xl w-full hover:bg-gray-hover', 'placeholder' => __('* Descripción del proyecto'), 'rows' => 5]) !!}
                         @error('project.description')
@@ -73,7 +73,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-3 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Características') }}
@@ -89,7 +89,7 @@
                     </div>
 
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[options][txt1]', old('project.options.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
@@ -107,7 +107,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[options][txt2]', old('project.options.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 2']) !!}
@@ -125,7 +125,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[options][txt3]', old('project.options.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 3']) !!}
@@ -143,7 +143,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[options][txt4]', old('project.options.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
@@ -161,7 +161,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[options][txt5]', old('project.options.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
@@ -179,7 +179,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 my-5 mx-3 rounded-2xl border border-blue-600">
                         <div class="w-1/3 m-5">
                             {{ __('* Ubicación física') }}
@@ -195,13 +195,13 @@
                         @enderror
                     </div>
                 </div>
-                <div class="">
+                <div class=" mx-5">
                     <x-subtitle_form>
                         <div>{{ __('Capital') }}</div>
                         {{ __('Desglosa los siguientes montos relacionados con el costo del proyecto y su origen:') }}
                     </x-subtitle_form>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::number('project[goal]', old('project.goal'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Costo total del Proyecto']) !!}
                         @error('project.goal')
@@ -217,7 +217,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::number('project[goal_two]', old('project.goal_two'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* ¿Cuánto será el monto de tu inversión?']) !!}
                         @error('project.goal_two')
@@ -234,7 +234,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Tipo de aportación') }}
@@ -250,7 +250,7 @@
                     </div>
 
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[inputs][txt1]', old('project.inputs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
@@ -268,7 +268,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[inputs][txt2]', old('project.inputs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
@@ -286,7 +286,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[inputs][txt3]', old('project.inputs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
@@ -304,7 +304,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[inputs][txt4]', old('project.inputs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
@@ -322,7 +322,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[inputs][txt5]', old('project.inputs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
@@ -341,7 +341,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 ml-3 mt-5 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la inversión') }}
@@ -357,7 +357,7 @@
                     </div>
 
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[origins][txt1]', old('project.origins.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
@@ -375,7 +375,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[origins][txt2]', old('project.origins.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
@@ -393,7 +393,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[origins][txt3]', old('project.origins.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
@@ -411,7 +411,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[origins][txt4]', old('project.origins.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
@@ -429,7 +429,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[origins][txt5]', old('project.origins.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
@@ -447,7 +447,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::number('project[request_max]', old('project.request_max'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto máximo solicitado']) !!}
                     </div>
@@ -457,7 +457,7 @@
                         </x-help_form>
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::number('project[request_min]', old('project.request_min'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto mínimo  solicitado']) !!}
                     </div>
@@ -467,7 +467,7 @@
                         </x-help_form>
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <label for="project_debt" class="cursor-pointer">
                             {!! Form::checkbox('project[debt]', old('project.debt'), false, ['class' => 'border-2 border-blue-600 w-5 h-5 mr-5', 'id' => 'project_debt']) !!}
@@ -481,7 +481,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la deuda') }}
@@ -497,7 +497,7 @@
                     </div>
 
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[debs][txt1]', old('project.debs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
@@ -515,7 +515,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[debs][txt2]', old('project.debs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
@@ -533,7 +533,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[debs][txt3]', old('project.debs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
@@ -551,7 +551,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[debs][txt4]', old('project.debs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
@@ -569,7 +569,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {!! Form::text('project[debs][txt5]', old('project.debs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
@@ -587,13 +587,13 @@
                         @enderror
                     </div>
                 </div>
-                <div class="">
+                <div class=" mx-5">
                     <x-subtitle_form>
                         {{ __('Inversión') }}
                     </x-subtitle_form>
 
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <label for="">
                             {{ __('Plazo para recabar la inversión en meses.') }}
@@ -610,7 +610,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <label for="">
                             {{ __('Plazo para ejecutar el proyecto en meses') }}
@@ -627,7 +627,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         {!! Form::number('project[min_investment]', old('project.min_investment'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Inversión mínima solicitada']) !!}
                     </div>
@@ -641,7 +641,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
                             <div>{{ __('Concepto') }}</div>
@@ -843,7 +843,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="">
+                <div class=" mx-5">
                     <x-subtitle_form>
                         <div>{{ __('Ganancias') }}</div>
                         {{ __('Describe lo que se ofrece a los que inviertan en el proyecto.') }}
@@ -851,7 +851,7 @@
 
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
                         <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
                             <div>{{ __('Temporalidad') }}</div>
@@ -926,7 +926,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5 flex">
                         <div class="w-1/2">
                             <label for="project_render">
@@ -949,7 +949,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="flex">
+                <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5 flex">
                         <div class="w-1/2">
                             <select name="project[list_avala"
@@ -982,7 +982,7 @@
                     </div>
                 </div>
 
-                <div class="flex">
+                <div class="flex mx-5 ">
                     <div class=" w-2/3 mx-3 my-5">
 
                     </div>
