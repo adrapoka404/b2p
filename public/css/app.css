@@ -1008,10 +1008,6 @@ select{
   margin-bottom: 0;
 }
 
-.invisible{
-  visibility: hidden;
-}
-
 .fixed{
   position: fixed;
 }
@@ -1051,10 +1047,6 @@ select{
   z-index: 50;
 }
 
-.z-10{
-  z-index: 10;
-}
-
 .col-span-6{
   grid-column: span 6 / span 6;
 }
@@ -1090,11 +1082,6 @@ select{
   margin-right: 1.25rem;
 }
 
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .mx-3{
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -1113,6 +1100,11 @@ select{
 .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-28{
@@ -1263,12 +1255,12 @@ select{
   margin-bottom: 1.25rem;
 }
 
-.-ml-10{
-  margin-left: -2.5rem;
-}
-
 .mt-16{
   margin-top: 4rem;
+}
+
+.-ml-10{
+  margin-left: -2.5rem;
 }
 
 .mt-96{
@@ -1904,6 +1896,46 @@ select{
   background-image: url('/img/fondo_forms.png');
 }
 
+.bg-proyecto-on{
+  background-image: url('/img/proyecto_on.png');
+}
+
+.bg-proyecto-off{
+  background-image: url('/img/proyecto_off.png');
+}
+
+.bg-empresa-on{
+  background-image: url('/img/empresa_on.png');
+}
+
+.bg-empresa-off{
+  background-image: url('/img/empresa_off.png');
+}
+
+.bg-legal-on{
+  background-image: url('/img/legal_on.png');
+}
+
+.bg-legal-off{
+  background-image: url('/img/legal_off.png');
+}
+
+.bg-representante-on{
+  background-image: url('/img/representante_on.png');
+}
+
+.bg-representante-off{
+  background-image: url('/img/representante_off.png');
+}
+
+.bg-contrato-on{
+  background-image: url('/img/contrato_on.png');
+}
+
+.bg-contrato-off{
+  background-image: url('/img/contrato_off.png');
+}
+
 .bg-fondo-registro{
   background-image: url('/img/edificios_registro.jpg');
 }
@@ -1930,46 +1962,6 @@ select{
 
 .bg-fondo-home-footer{
   background-image: url('/img/logo_beezper_blanco.png');
-}
-
-.bg-proyecto-on{
-  background-image: url('/img/proyecto_on.png');
-}
-
-.bg-empresa-off{
-  background-image: url('/img/empresa_off.png');
-}
-
-.bg-legal-off{
-  background-image: url('/img/legal_off.png');
-}
-
-.bg-representante-off{
-  background-image: url('/img/representante_off.png');
-}
-
-.bg-contrato-off{
-  background-image: url('/img/contrato_off.png');
-}
-
-.bg-proyecto-off{
-  background-image: url('/img/proyecto_off.png');
-}
-
-.bg-empresa-on{
-  background-image: url('/img/empresa_on.png');
-}
-
-.bg-legal-on{
-  background-image: url('/img/legal_on.png');
-}
-
-.bg-representante-on{
-  background-image: url('/img/representante_on.png');
-}
-
-.bg-contrato-on{
-  background-image: url('/img/contrato_on.png');
 }
 
 .from-red-300{
@@ -2247,6 +2239,10 @@ select{
   font-weight: 800;
 }
 
+.font-thin{
+  font-weight: 100;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
@@ -2309,14 +2305,14 @@ select{
   color: rgb(68 181 227 / var(--tw-text-opacity));
 }
 
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-purple-200{
   --tw-text-opacity: 1;
   color: rgb(92 123 255 / var(--tw-text-opacity));
+}
+
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-green{
@@ -2460,12 +2456,6 @@ select{
 
 .transition-all{
   transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-opacity{
-  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
