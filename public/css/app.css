@@ -1008,6 +1008,10 @@ select{
   margin-bottom: 0;
 }
 
+.static{
+  position: static;
+}
+
 .fixed{
   position: fixed;
 }
@@ -1882,6 +1886,11 @@ select{
 .bg-blue-600{
   --tw-bg-opacity: 1;
   background-color: rgb(70 189 214 / var(--tw-bg-opacity));
+}
+
+.bg-gray{
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 146 166 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25{
