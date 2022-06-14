@@ -33,7 +33,7 @@ class SteepOneController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProject $request)
+    public function store(request $request)
     {
         
         echo "<pre>";

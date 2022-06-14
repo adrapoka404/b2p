@@ -74,111 +74,106 @@
                     </div>
                 </div>
                 <div class="flex mx-5">
-                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-3 text-white">
-                        <div class="w-1/2 border-r-2 border-blue-600">
+
+                    <div class=" w-2/3 ml-3 text-center border-2 border-blue-600 bg-blue-600 py-3 text-white">
+                        <div class="w-full border-b-white border-b-2">
                             {{ __('Características') }}
                         </div>
-                        <div class="w-1/2">
-                            {{ __('Descripción') }}
+                        <div class="w-full flex">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {{ __('Característica') }}
+                            </div>
+                            <div class="w-1/2">
+                                {{ __('Descripción') }}
+                            </div>
                         </div>
+                        <div class="w-full flex  my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[options][txt1]', old('project.options.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover text-black', 'placeholder' => 'Grandes rendimientos']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::text('project[options][value1]', old('project.options.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover text-black', 'placeholder' => '2% anual']) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex  my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[options][txt2]', old('project.options.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Grandes rendimientos']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::text('project[options][value2]', old('project.options.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '2% anual']) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[options][txt3]', old('project.options.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Grandes rendimientos']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::text('project[options][value3]', old('project.options.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '2% anual']) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1" style="display: none" id="divCaracteristica4">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[options][txt4', old('project.options.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Grandes rendimientos']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::text('project[options][value4]', old('project.options.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '2% anual']) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1" style="display: none" id="divCaracteristica5">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[options][txt5]', old('project.options.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Grandes rendimientos']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::text('project[options][value5]', old('project.options.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '2% anual']) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1 ">
+                            <div class="w-full" id='masCaracteristicas'>
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Agregar carcaterística') }}</div>
+                            </div>
+                            <div class="w-full" id='menosCaracteristicas' style="display: none">
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Quitar carcaterística') }}</div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class=" w-1/3 mx-2">
                         <x-help_form>
                             {{ __('Detalla en qué consiste el proyecto, es decir describe sus principales atributos para convencer a los inversionistas de participar en tu proyecto.') }}
                         </x-help_form>
-                    </div>
 
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[options][txt1]', old('project.options.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[options][value1]', old('project.options.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.options.txt1')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.options.value1')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[options][txt2]', old('project.options.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 2']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[options][value2]', old('project.options.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.options.txt2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.options.value2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[options][txt3]', old('project.options.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 3']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[options][value3]', old('project.options.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Obligatorio']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.options.txt3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.options.value3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
+
                     </div>
+
                 </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[options][txt4]', old('project.options.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[options][value4]', old('project.options.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opcional']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
-                        @error('project.options.txt4')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                        @error('project.options.value4')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[options][txt5]', old('project.options.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::text('project[options][value5]', old('project.options.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opcional']) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
-                        @error('project.options.txt5')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                        @error('project.options.value5')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                    </div>
-                </div>
+
+
+
+
                 <div class="flex mx-5">
                     <div class=" w-2/3 my-5 mx-3 rounded-2xl border border-blue-600">
                         <div class="w-1/3 m-5">
@@ -235,103 +230,104 @@
                 </div>
 
                 <div class="flex mx-5">
-                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                    <div
+                        class=" w-2/3 ml-3 flex flex-wrap text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                        <div class="w-full border-r-2 border-blue-600">
+                            {{ __('Aportaciones') }}
+                        </div>
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Tipo de aportación') }}
                         </div>
                         <div class="w-1/2">
                             {{ __('Monto') }}
                         </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[inputs][txt1]', old('project.inputs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
+                            </div>
+                            <div class="w-1/2 ">
+                                {!! Form::number('project[inputs][value1]', old('project.inputs.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideInput2" style="display:none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[inputs][txt2]', old('project.inputs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[inputs][value2]', old('project.inputs.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideInput3" style="display:none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[inputs][txt3]', old('project.inputs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[inputs][value3]', old('project.inputs.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideInput4" style="display:none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[inputs][txt4]', old('project.inputs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[inputs][value4]', old('project.inputs.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideInput5" style="display:none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[inputs][txt5]', old('project.inputs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[inputs][value5]', old('project.inputs.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+
+                        <div class="w-full flex my-1 ">
+                            <div class="w-full" id='masAportaciones'>
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Agregar aportación') }}</div>
+                            </div>
+                            <div class="w-full" id='menosAportaciones' style="display: none">
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Quitar aportación') }}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class=" w-1/3 mx-2">
                         <x-help_form>
                             {{ __('Especifica si tu inversión corresponde a una propiedad, local, personal, etc.') }}
                         </x-help_form>
-                    </div>
 
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[inputs][txt1]', old('project.inputs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[inputs][value1]', old('project.inputs.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
-                        @error('project.inputs.txt1')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                        @error('project.inputs.value1')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[inputs][txt2]', old('project.inputs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[inputs][value2]', old('project.inputs.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.inputs.txt2')
                             <x-validation-error>{{ $message }}</x-validation-error>
+                            @error('project.inputs.txt1')
+                                <x-validation-error>{{ $message }}</x-validation-error>
+                            @enderror
+                            @error('project.inputs.value1')
+                                <x-validation-error>{{ $message }}</x-validation-error>
+                            @enderror
+
                         @enderror
                         @error('project.inputs.value2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[inputs][txt3]', old('project.inputs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[inputs][value3]', old('project.inputs.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.inputs.txt3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.inputs.value3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[inputs][txt4]', old('project.inputs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[inputs][value4]', old('project.inputs.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.inputs.txt4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.inputs.value4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[inputs][txt5]', old('project.inputs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[inputs][value5]', old('project.inputs.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.inputs.txt5')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
@@ -339,106 +335,103 @@
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                     </div>
+
                 </div>
 
                 <div class="flex mx-5">
-                    <div class=" w-2/3 ml-3 mt-5 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                    <div
+                        class=" w-2/3 ml-3 mt-5 flex flex-wrap text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                        <div class="w-full border-r-2 border-blue-600">
+                            {{ __('Inversión') }}
+                        </div>
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la inversión') }}
                         </div>
                         <div class="w-1/2">
                             {{ __('Monto') }}
                         </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[origins][txt1]', old('project.origins.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[origins][value1]', old('project.origins.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideOrigin2" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[origins][txt2]', old('project.origins.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[origins][value2]', old('project.origins.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideOrigin3" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[origins][txt3]', old('project.origins.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[origins][value3]', old('project.origins.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideOrigin4" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[origins][txt4]', old('project.origins.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[origins][value4]', old('project.origins.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex border-r-2 border-blue-600 my-1" id="hideOrigin5" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600">
+                                {!! Form::text('project[origins][txt5]', old('project.origins.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[origins][value5]', old('project.origins.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1 ">
+                            <div class="w-full" id='masOrigins'>
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Agregar origen') }}</div>
+                            </div>
+                            <div class="w-full" id='menosOrigins' style="display: none">
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Quitar origen') }}</div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
                             {{ __('Especificar si es un préstamo, ahorro, reinversión.') }}
                         </x-help_form>
-                    </div>
-
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origins][txt1]', old('project.origins.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => '* Opción 1']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[origins][value1]', old('project.origins.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.origins.txt1')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.origins.value1')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origins][txt2]', old('project.origins.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 2']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[origins][value2]', old('project.origins.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.origins.txt2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.origins.value2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origins][txt3]', old('project.origins.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 3']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[origins][value3]', old('project.origins.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.origins.txt3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.origins.value3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origins][txt4]', old('project.origins.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 4']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[origins][value4]', old('project.origins.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.origins.txt4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.origins.value4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[origins][txt5]', old('project.origins.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Opción 5']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[origins][value5]', old('project.origins.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
                         @error('project.origins.txt5')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
@@ -446,10 +439,17 @@
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                     </div>
+
+                </div>
+
+                <div class=" mx-5">
+                    <x-subtitle_form>
+                        <div>{{ __('Monto solicitado a la plataforma') }}</div>
+                    </x-subtitle_form>
                 </div>
                 <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[request_max]', old('project.request_max'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto máximo solicitado']) !!}
+                        {!! Form::number('project[request_max]', old('project.request_max'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto máximo solicitado', 'id' => 'maxAmount']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
@@ -459,13 +459,18 @@
                 </div>
                 <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
-                        {!! Form::number('project[request_min]', old('project.request_min'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto mínimo  solicitado']) !!}
+                        {!! Form::number('project[request_min]', old('project.request_min'), ['class' => 'border-2 border-blue-600 rounded rounded-full w-full hover:bg-gray-hover', 'placeholder' => '* Monto mínimo  solicitado', 'id' => 'minAmount']) !!}
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
                             {{ __('Registrar la cantidad de inversión mínima requerida para el proyecto. No puede ser menor del 20% del máximo.') }}
                         </x-help_form>
                     </div>
+                </div>
+                <div class=" mx-5">
+                    <x-subtitle_form>
+                        <div>{{ __('Deuda') }}</div>
+                    </x-subtitle_form>
                 </div>
                 <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
@@ -481,112 +486,120 @@
                     </div>
                 </div>
 
-                <div class="flex mx-5">
-                    <div class=" w-2/3 ml-3 flex text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                <div class="flex mx-5" style="display: none" id="divDeuda">
+                    <div
+                        class=" w-2/3 ml-3 flex flex-wrap text-center border-2 border-blue-600 bg-blue-600 py-1 text-white">
+                        <div class="w-full">
+                            {{ __('Deuda') }}
+                        </div>
                         <div class="w-1/2 border-r-2 border-blue-600">
                             {{ __('Origen de la deuda') }}
                         </div>
                         <div class="w-1/2">
                             {{ __('Monto') }}
                         </div>
+                        <div class="w-full flex my-1">
+                            <div class="w-1/2 border-r-2 border-blue-600" >
+                                {!! Form::text('project[debs][txt1]', old('project.debs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[debs][value1]', old('project.debs.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+
+                        <div class="w-full flex my-1" id="hideDeb2" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600" >
+                                {!! Form::text('project[debs][txt2]', old('project.debs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[debs][value2]', old('project.debs.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1" id="hideDeb3" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600" >
+                                {!! Form::text('project[debs][txt3]', old('project.debs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[debs][value3]', old('project.debs.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1" id="hideDeb4" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600" >
+                                {!! Form::text('project[debs][txt4]', old('project.debs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[debs][value4]', old('project.debs.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1" id="hideDeb5" style="display: none">
+                            <div class="w-1/2 border-r-2 border-blue-600" >
+                                {!! Form::text('project[debs][txt5]', old('project.debs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
+                            </div>
+                            <div class="w-1/2">
+                                {!! Form::number('project[debs][value5]', old('project.debs.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
+                            </div>
+                        </div>
+                        <div class="w-full flex my-1 ">
+                            <div class="w-full" id='masDebs'>
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Agregar deuda') }}</div>
+                            </div>
+                            <div class="w-full" id='menosDebs' style="display: none">
+                                <div
+                                    class=" bg-blue-400 shadow-lg shadow-blue-500 text-center items-center cursor-pointer">
+                                    {{ __('Quitar deuda') }}</div>
+                            </div>
+                        </div>
+
+
                     </div>
+
                     <div class=" w-1/3 mx-2">
                         <x-help_form>
                             {{ __('En caso de que si tenga deuda describir el monto y origen de la deuda. Es decir, escribir banco, préstamo familiar, asociados, etc.') }}
                         </x-help_form>
                     </div>
+                    @error('project.debs.txt1')
+                        <x-validation-error>{{ $message }}</x-validation-error>
+                    @enderror
+                    @error('project.debs.value1')
+                        <x-validation-error>{{ $message }}</x-validation-error>
+                    @enderror
 
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[debs][txt1]', old('project.debs.txt1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[debs][value1]', old('project.debs.value1'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
-                        @error('project.debs.txt1')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                        @error('project.debs.value1')
-                            <x-validation-error>{{ $message }}</x-validation-error>
-                        @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[debs][txt2]', old('project.debs.txt2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[debs][value2]', old('project.debs.value2'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
-                        @error('project.debs.txt2')
+                    @error('project.debs.txt2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.debs.value2')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[debs][txt3]', old('project.debs.txt3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[debs][value3]', old('project.debs.value3'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.debs.txt3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.debs.value3')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[debs][txt4]', old('project.debs.txt4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[debs][value4]', old('project.debs.value4'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.debs.txt4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.debs.value4')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
-                </div>
-                <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 flex text-center border-2 border-blue-600">
-                        <div class="w-1/2 border-r-2 border-blue-600">
-                            {!! Form::text('project[debs][txt5]', old('project.debs.txt5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => 'Descripción de adeudo']) !!}
-                        </div>
-                        <div class="w-1/2">
-                            {!! Form::number('project[debs][value5]', old('project.debs.value5'), ['class' => 'border-0 w-full hover:bg-gray-hover', 'placeholder' => "$"]) !!}
-                        </div>
-                    </div>
-                    <div class=" w-1/3 ">
+
                         @error('project.debs.txt5')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
                         @error('project.debs.value5')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
-                    </div>
                 </div>
+
+                
+                
+                
+               
                 <div class=" mx-5">
                     <x-subtitle_form>
                         {{ __('Inversión') }}
@@ -643,95 +656,100 @@
 
                 <div class="flex mx-5">
                     <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
-                            <div>{{ __('Concepto') }}</div>
-                            <div>{{ __('Características') }}</div>
-                            <div>{{ __('Monto') }}</div>
-                            <div>{{ __('%') }}</div>
+                        <div class="flex flex-wrap text-center bg-blue-600 py-1  ">
+                            <div class="w-full border-b-white border-b-2 text-white">
+                                {{__('Conceptos del proyecto')}}
+                            </div>
+                            <div class="w-1/4 text-white">
+                                {{ __('Concepto') }}
+                            </div>
+                            <div class="w-1/4 text-white">
+                                {{ __('Características') }}
+                            </div>
+                            <div class="w-1/4 text-white">
+                                {{ __('Monto') }}
+                            </div>
+                            <div class="w-1/4 text-white">
+                                {{ __('%') }}
+                            </div>
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Contratación de personal') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[personal][txt]', old('project.personal.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[personal][amount]', old('project.personal.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[personal][porcent]', old('project.personal.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+                            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Mano de obra') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[mobra][txt]', old('project.mobra.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[mobra][amount]', old('project.mobra.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[mobra][porcent]', old('project.mobra.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Insumos/Material') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[insumos][txt]', old('project.insumos.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[insumos][amount]', old('project.insumos.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[insumos][porcent]', old('project.insumos.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+                            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Equipo') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[equipo][txt]', old('project.equipo.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[equipo][amount]', old('project.equipo.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[equipo][porcent]', old('project.equipo.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+                           
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Mobiliario') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[mobiliario][txt]', old('project.mobiliario.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[mobiliario][amount]', old('project.mobiliario.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[mobiliario][porcent]', old('project.mobiliario.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Construcción') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[construccion][txt]', old('project.construccion.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[construccion][amount]', old('project.construccion.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[construccion][porcent]', old('project.construccion.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Reparaciones') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[reparaciones][txt]', old('project.reparaciones.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[reparaciones][amount]', old('project.reparaciones.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[reparaciones][porcent]', old('project.reparaciones.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Arrendamiento') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[arrendamiento][txt]', old('project.arrendamiento.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[arrendamiento][amount]', old('project.arrendamiento.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[arrendamiento][porcent]', old('project.arrendamiento.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Adquisición de inmueble') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[inmueble][txt]', old('project.inmueble.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[inmueble][amount_inmueble]', old('project.inmueble.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[inmueble][porcent_inmueble]', old('project.inmueble.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Permisos y trámites') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[tramites][txt]', old('project.tramites.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[tramites][amount]', old('project.tramites.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[tramites][porcent]', old('project.tramites.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+                            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Software') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[software][txt]', old('project.software.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[software][amount]', old('project.software.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[software][porcent]', old('project.software.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+                            
+                            <div class="w-1/4 border-b-white border-b-2 text-left pl-2 text-white">{{ __('Otros') }}</div>
+                            <div class="w-1/4">{!! Form::text('project[otros][txt]', old('project.otros.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[otros][amount]', old('project.otros.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover debAmountTotal', 'placeholder' => 'Monto']) !!}</div>
+                            <div class="w-1/4">{!! Form::number('project[otros][porcent]', old('project.otros.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-full debPorcentTotal', 'placeholder' => '%']) !!}</div>
+
+                            <div class="w-1/4 text-left pl-2 text-white">{{ __('Total') }}</div>
+                            <div class="w-1/4 text-white">{{ __('Monto Solicitado máximo') }}</div>
+                            <div class="w-1/4 text-white" id="debAmountTotal"></div>
+                            <div class="w-1/4 text-white" id="debPorcentTotal"></div>
                         </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Contratación de personal') }}</div>
-                            <div>{!! Form::text('project[personal][txt]', old('project.personal.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[personal][amount]', old('project.personal.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[personal][porcent]', old('project.personal.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Mano de obra') }}</div>
-                            <div>{!! Form::text('project[mobra][txt]', old('project.mobra.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[mobra][amount]', old('project.mobra.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[mobra][porcent]', old('project.mobra.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Insumos/Material') }}</div>
-                            <div>{!! Form::text('project[insumos][txt]', old('project.insumos.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[insumos][amount]', old('project.insumos.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[insumos][porcent]', old('project.insumos.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Equipo') }}</div>
-                            <div>{!! Form::text('project[equipo][txt]', old('project.equipo.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[equipo][amount]', old('project.equipo.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[equipo][porcent]', old('project.equipo.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Mobiliario') }}</div>
-                            <div>{!! Form::text('project[mobiliario][txt]', old('project.mobiliario.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[mobiliario][amount]', old('project.mobiliario.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[mobiliario][porcent]', old('project.mobiliario.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Construcción') }}</div>
-                            <div>{!! Form::text('project[construccion][txt]', old('project.construccion.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[construccion][amount]', old('project.construccion.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[construccion][porcent]', old('project.construccion.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Reparaciones') }}</div>
-                            <div>{!! Form::text('project[reparaciones][txt]', old('project.reparaciones.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[reparaciones][amount]', old('project.reparaciones.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[reparaciones][porcent]', old('project.reparaciones.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Arrendamiento') }}</div>
-                            <div>{!! Form::text('project[arrendamiento][txt]', old('project.arrendamiento.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[arrendamiento][amount]', old('project.arrendamiento.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[arrendamiento][porcent]', old('project.arrendamiento.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Adquisición de inmueble') }}</div>
-                            <div>{!! Form::text('project[inmueble][txt]', old('project.inmueble.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[inmueble][amount_inmueble]', old('project.inmueble.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[inmueble][porcent_inmueble]', old('project.inmueble.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Permisos y trámites') }}</div>
-                            <div>{!! Form::text('project[tramites][txt]', old('project.tramites.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[tramites][amount]', old('project.tramites.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[tramites][porcent]', old('project.tramites.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Software') }}</div>
-                            <div>{!! Form::text('project[software][txt]', old('project.software.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[software][amount]', old('project.software.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[software][porcent]', old('project.software.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Otros') }}</div>
-                            <div>{!! Form::text('project[otros][txt]', old('project.otros.txt'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Característica']) !!}</div>
-                            <div>{!! Form::number('project[otros][amount]', old('project.otros.amount'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => 'Monto']) !!}</div>
-                            <div>{!! Form::number('project[otros][porcent]', old('project.otros.porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover w-2/3', 'placeholder' => '%']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Total') }}</div>
-                            <div>&nbsp;</div>
-                            <div>{{ __('Monto Solicitado máximo') }}</div>
-                            <div>{{ __('100%') }}</div>
-                        </div>
+                         
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         <x-help_form>
                             {{ __('Escoger todos los conceptos que apliquen a su proyecto y desglosar las características de cada uno. El total debe coincidir con el monto máximo solicitado. ') }}
                         </x-help_form>
+                        <div id="errorDebAmount" style="display: none">
+                            <x-validation-error>{{ __('La suma de los montos en los conceptos debe estar entre el monto máximo y monto mínimo solicitado') }}</x-validation-error>
+                        </div>
+                        <div id="errorDebPorcent" style="display: none">
+                            <x-validation-error>{{ __('La suma de los porcentajes en los conceptos debe ser exactamente igual a 100%') }}</x-validation-error>
+                        </div>
                         @error('project.personal.txt')
                             <x-validation-error>{{ $message }}</x-validation-error>
                         @enderror
@@ -852,36 +870,32 @@
                 </div>
 
                 <div class="flex mx-5">
-                    <div class=" w-2/3 mx-3 my-5">
-                        <div class=" grid grid-cols-4 text-center bg-blue-600 text-white py-1 ">
-                            <div>{{ __('Temporalidad') }}</div>
-                            <div>{{ __('% de ganacia') }}</div>
-                            <div></div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Anual') }}</div>
-                            <div>{!! Form::text('project[porcents][anual_porcent]', old('project.porcents.anual_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('project[porcents][anual]', old('project.porcents.anual'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Semestral') }}</div>
-                            <div>{!! Form::text('project[porcents][semestral_porcent]', old('project.porcents.semestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('project[porcents][semestral]', old('project.porcents.semestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Trimestral') }}</div>
-                            <div>{!! Form::text('project[porcents][trimestral_porcent]', old('project.porcents.trimestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('project[porcents][trimestral]', old('project.porcents.trimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Bimestral') }}</div>
-                            <div>{!! Form::text('project[porcents][bimestral_porcent]', old('project.porcent.bimestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('project[porcents][bimestral]', old('project.porcents.bimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
-                        </div>
-                        <div class=" grid grid-cols-4">
-                            <div>{{ __('Desinversión') }}</div>
-                            <div>{!! Form::text('project[porcents][desinversion_porcent]', old('project.porcents.desinversion_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
-                            <div>{!! Form::number('project[porcents][desinversion]', old('project.porcents.desinversion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
+                    <div class=" w-2/3  mx-3 my-5">
+                        <div class=" flex flex-wrap text-center bg-blue-600 py-1 ">
+                            <div class="w-full text-white border-b-2 border-b-white">{{__('Detallle de temporalidad')}}</div>
+                            <div class="w-1/3 text-white border-b-2 border-b-white">{{ __('Temporalidad') }}</div>
+                            <div class="w-1/3 text-white">{{ __('% de ganacia') }}</div>
+                            <div class="w-1/3 text-white">{{__('Monto')}}</div>
+
+                            <div class="w-1/3 text-white border-b-2 border-b-white">{{ __('Anual') }}</div>
+                            <div class="w-1/3">{!! Form::text('project[porcents][anual_porcent]', old('project.porcents.anual_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
+                            <div class="w-1/3">{!! Form::number('project[porcents][anual]', old('project.porcents.anual'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
+                    
+                            <div class="w-1/3 text-white border-b-2 border-b-white">{{ __('Semestral') }}</div>
+                            <div class="w-1/3">{!! Form::text('project[porcents][semestral_porcent]', old('project.porcents.semestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
+                            <div class="w-1/3">{!! Form::number('project[porcents][semestral]', old('project.porcents.semestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
+
+                            <div class="w-1/3 text-white border-b-2 border-b-white">{{ __('Trimestral') }}</div>
+                            <div class="w-1/3">{!! Form::text('project[porcents][trimestral_porcent]', old('project.porcents.trimestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
+                            <div class="w-1/3">{!! Form::number('project[porcents][trimestral]', old('project.porcents.trimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
+
+                            <div class="w-1/3 text-white border-b-2 border-b-white">{{ __('Bimestral') }}</div>
+                            <div class="w-1/3">{!! Form::text('project[porcents][bimestral_porcent]', old('project.porcent.bimestral_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
+                            <div class="w-1/3">{!! Form::number('project[porcents][bimestral]', old('project.porcents.bimestral'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
+
+                            <div class="w-1/3 text-white">{{ __('Desinversión') }}</div>
+                            <div class="w-1/3">{!! Form::text('project[porcents][desinversion_porcent]', old('project.porcents.desinversion_porcent'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '%']) !!}</div>
+                            <div class="w-1/3">{!! Form::number('project[porcents][desinversion]', old('project.porcents.desinversion'), ['class' => 'border-2 border-blue-600 hover:bg-gray-hover', 'placeholder' => '']) !!}</div>
                         </div>
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
@@ -992,8 +1006,143 @@
                     </div>
                 </div>
             </div>
-            
+
             <x-jet-validation-errors />
         </div>
     </div>
+    @section('jquery')
+        <script>
+            $(document).ready(function() {
+                var caracteristicas = 3; // igualar con el mónimo de características requeridas
+                var aportaciones = 1 // igualar con mínimo de aportaciones requeridas
+                var origins = 1 // igualar con mínimo de origne de aportación requeridas
+                var debs = 1 // igualar con mínimo de origne de aportación requeridas
+
+                var debPorcent = 0;
+                $("#masCaracteristicas").click(function() {
+                    caracteristicas++;
+                    
+                    $("#divCaracteristica" + caracteristicas).show('blind');
+                    $("#menosCaracteristicas").show()
+                    if (caracteristicas == 5)
+                        $(this).hide();
+                })
+
+                $("#menosCaracteristicas").click(function() {
+                    $("#divCaracteristica" + caracteristicas).hide('blind');
+                    $("#masCaracteristicas").show()
+                    caracteristicas--;
+                    if (caracteristicas == 3)
+                        $(this).hide();
+                })
+
+                $("#masAportaciones").click(function() {
+
+                    aportaciones++;
+                    $("#hideInput" + aportaciones).show('blind');
+                    $("#menosAportaciones").show()
+                    if (aportaciones == 5)
+                        $(this).hide();
+                })
+
+                $("#menosAportaciones").click(function() {
+                    $("#hideInput" + aportaciones).hide('blind');
+                    $("#masAportaciones").show()
+                    aportaciones--;
+                    if (aportaciones == 1)
+                        $(this).hide();
+                        
+                })
+
+                $("#masOrigins").click(function() {
+                    origins++;
+                    $("#hideOrigin" + origins).show('blind');
+                    $("#menosOrigins").show()
+                    if (origins == 5)
+                        $(this).hide();
+
+                })
+
+                $("#menosOrigins").click(function() {
+                    $("#hideOrigin" + origins).hide('blind');
+                    $("#masOrigins").show()
+                    origins--;
+                    if (origins == 1)
+                        $(this).hide();
+                        
+                })
+
+                $("#masDebs").click(function() {
+                    debs++;
+                    $("#hideDeb" + debs).show('blind');
+                    $("#menosDebs").show()
+                    if (debs == 5)
+                        $(this).hide();
+
+                })
+
+                $("#menosDebs").click(function() {
+                    $("#hideDeb" + debs).hide('blind');
+                    $("#masDebs").show()
+                    debs--;
+                    if (debs == 1)
+                        $(this).hide();
+                        
+                })
+
+                $("#project_debt").on('click', function() {
+                    if ($(this).is(':checked'))
+                        $('#divDeuda').show('blind')
+                    else
+                        $('#divDeuda').hide('blind')
+                })
+
+                $(".debAmountTotal").keyup(function(){
+                    var debAmount = 0;
+                    var maxAmount = $("#maxAmount").val();
+                    var minAmount = $("#minAmount").val();
+
+                    $(".debAmountTotal").each(function(index, value){
+                        if($.isNumeric($(this).val()))
+                            debAmount+= eval($(this).val());
+                    })
+
+                    $("#debAmountTotal").html('$ '+ debAmount)
+
+                    if(debAmount >= minAmount && debAmount <= maxAmount){
+                        $("#debAmountTotal").addClass('bg-green')   
+                        $("#debAmountTotal").removeClass('bg-red-300')   
+                        $("#errorDebAmount").hide();                
+                    }
+                    else {
+                        $("#debAmountTotal").removeClass('bg-green') 
+                        $("#debAmountTotal").addClass('bg-red-300') 
+                        $("#errorDebAmount").show();                                  
+                    }
+                })
+
+                $(".debPorcentTotal").keyup(function(){
+                    var debPorcent = 0;
+                    
+                    $(".debPorcentTotal").each(function(index, value){
+                        if($.isNumeric($(this).val()))
+                            debPorcent+= eval($(this).val());
+                    })
+
+                    $("#debPorcentTotal").html('$ '+ debPorcent)
+
+                    if(debPorcent != 100){
+                        $("#debPorcentTotal").removeClass('bg-green')   
+                        $("#debPorcentTotal").addClass('bg-red-300')     
+                        $("#errorDebPorcent").show();                              
+                    }
+                    else {
+                        $("#debPorcentTotal").addClass('bg-green') 
+                        $("#debPorcentTotal").removeClass('bg-red-300')                   
+                        $("#errorDebPorcent").hide();     
+                    }
+                })
+            })
+        </script>
+    @endsection
 </x-app-layout>
