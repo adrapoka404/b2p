@@ -42,7 +42,8 @@ class SteepOneController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'project.name' => 'required'
+            'project.name' => 'required',
+            'project.project_type_id' => 'required|numeric',
         ]);
 
         $nuevo = $request->all('project');
