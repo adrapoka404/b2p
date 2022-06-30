@@ -63,7 +63,9 @@ Route::resource('projects', ProjectController::class)->names('projects')->middle
 Route::resource('testprojects', ProjectController::class)->names('testprojects');
 Route::resource('projecttypes', ProjectTypesController::class)->names('projecttypes');
 Route::resource('verificarcp', VerificarcpController::class)->names('verificarcp');
+
 Route::resource('steepone', SteepOneController::class)->names('steepone');
+
 Route::resource('steeptwo', SteepTwoController::class)->names('steeptwo');
 Route::resource('steepthree', SteepThreeController::class)->names('steepthree');
 Route::resource('steepfour', SteepFourController::class)->names('steepfour');
