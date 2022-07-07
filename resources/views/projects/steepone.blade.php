@@ -166,7 +166,7 @@
 
                 $("#nextSteep").on('click', function() {
                     $("#form_completo").val('1');
-                    $("#formSteepOne").attr('action', "{{ route('steepone.update', $project) }}");
+                    $("#formSteepOne").attr('action', "{{ route('steepone.update', null) }}");
                     $("#formSteepOne").submit();
 
                 })
