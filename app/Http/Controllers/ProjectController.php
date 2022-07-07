@@ -41,8 +41,9 @@ class ProjectController extends Controller
     {
         $projecttypes   = ProjectType::orderBy('name', 'asc')->get();
         $docs           = DocumentType::all();
-
-        return view('projects.steepone', compact('projecttypes', 'docs'));
+        $pOptions       = 3;
+        $pInputs        = 1;
+        return view('projects.steepone', compact('projecttypes', 'docs', 'pOptions', 'pInputs'));
     }
 
     public function steepone(Request $request){
