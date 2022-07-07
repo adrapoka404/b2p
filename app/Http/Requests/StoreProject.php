@@ -77,7 +77,7 @@ class StoreProject extends FormRequest
             'project.debs.value5'                   => 'nullable|numeric',
             'project.estimated_term'                => 'required_if:project.completo,=,1|between:1,6',
             'project.estimated_ejecution'           => 'required_if:project.completo,=,1|between:1,36',
-            'project.min_investment'                => 'required_if:project.completo,=,1',//|min:999',
+            'project.min_investment'                => 'required_if:project.completo,=,1|min:999',
             'project.personal.txt'                  => 'nullable',
             'project.personal.amount'               => 'nullable|numeric',
             'project.personal.porcent'              => 'nullable|numeric',
@@ -132,7 +132,7 @@ class StoreProject extends FormRequest
     {
         return [
             'project.name.required'                             => 'El campo nombre de proyecto es obligatorio',
-            'project.name.max'                                  => 'El campo nombre de proyecto no puede tener mas de 100 caracteres',
+            'project.name.max'                                  => 'El campo nombre de proyecto no puede tener mas de 100aportac caracteres',
             'project.project_type_id.required'                  => 'El campo tipo de proyecto es obligatorio',
             'project.project_type_id.numeric'                   => 'El campo tipo de proyecto es obligatorio',
             'project.description.required_if'                   => 'El campo de descripcion es obligatorio para pasar al paso siguiente',

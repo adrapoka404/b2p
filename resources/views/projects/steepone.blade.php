@@ -158,14 +158,19 @@
                 })
 
                 $("#onlySave").on('click', function() {
+                    $("#form_completo").val('0');
+                    $("#formSteepOne").attr('action', "{{ route('steepone.store') }}");
+                    $("input[name=_method]").val("POST");
                     $("#formSteepOne").submit();
                 })
 
                 $("#nextSteep").on('click', function() {
                     $("#form_completo").val('1');
+                    $("#formSteepOne").attr('action', "{{ route('steepone.update', $project) }}");
                     $("#formSteepOne").submit();
 
                 })
+
 
                 $("#text_description").on('keyup', function() {
                     van = 600 - $(this).val().length;
