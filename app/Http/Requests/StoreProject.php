@@ -25,7 +25,7 @@ class StoreProject extends FormRequest
     {
         return [
             'project.completo'                      => 'required',
-            'project.name'                          => 'required_if:project.completo,=,1|max:10',
+            'project.name'                          => 'required_if:project.completo,=,1|max:100',
             'project.description'                   => 'required_if:project.completo,=,1|min:200|max:600',
 
             'project.description'                   => 'required_if:project.completo,=,1|min:200|max:600',
@@ -132,7 +132,7 @@ class StoreProject extends FormRequest
     {
         return [
             'project.name.required'                             => 'El campo nombre de proyecto es obligatorio',
-            'project.name.max'                                  => 'El campo nombre de proyecto no puede tener mas de 10 caracteres',
+            'project.name.max'                                  => 'El campo nombre de proyecto no puede tener mas de 100 caracteres',
             'project.project_type_id.required'                  => 'El campo tipo de proyecto es obligatorio',
             'project.project_type_id.numeric'                   => 'El campo tipo de proyecto es obligatorio',
             'project.description.required_if'                   => 'El campo de descripcion es obligatorio para pasar al paso siguiente',
