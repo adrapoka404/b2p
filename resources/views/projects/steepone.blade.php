@@ -7,14 +7,14 @@
                 ->getName()" />
             {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true, 'id' => 'formSteepOne']) !!}
             <div class="w-full mx-5">
-                <x-form-steep-one :projecttypes="$projecttypes" :docs="$docs" />
-                {!! Form::close() !!}
+                <x-form-steep-one :projecttypes="$projecttypes" :docs="$docs" :pOptions="$pOptions" :pInputs='$pInputs'/>
                 <div class="flex mx-5 ">
                     <div class=" w-2/3 mx-3 my-5">
 
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         {!! Form::hidden('project[completo]', 0, ['id' => 'form_completo']) !!}
+                        {!! Form::hidden('project[exist]', 0) !!}
                         <span id="onlySave"
                             class='bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer'>Guardar
                             Avance</span>
@@ -23,6 +23,7 @@
                     </div>
                 </div>
             </div>
+            {!! Form::close() !!}
         </div>
     </div>
     @section('jquery')
@@ -112,7 +113,7 @@
                         $('#divDeuda').hide('blind')
                 })
 
-                $(".debAmountTotal").keyup(function() {
+                $(".debAmountTotal").change(function() {
                     var debAmount = 0;
                     var maxAmount = $("#maxAmount").val();
                     var minAmount = $("#minAmount").val();

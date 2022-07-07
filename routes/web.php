@@ -5,6 +5,7 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectTypesController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SteepFiveController;
 use App\Http\Controllers\SteepFourController;
 use App\Http\Controllers\SteepOneController;
@@ -71,3 +72,6 @@ Route::resource('steepthree', SteepThreeController::class)->names('steepthree');
 Route::resource('steepfour', SteepFourController::class)->names('steepfour');
 Route::resource('steepfive', SteepFiveController::class)->names('steepfive');
 Route::resource('steepsix', SteepSixController::class)->names('steepsix');
+
+//Rutas para servicios
+Route::get('servicios/{zipcode}', [ServiciosController::class, 'zipcode'])->name('zipcode');

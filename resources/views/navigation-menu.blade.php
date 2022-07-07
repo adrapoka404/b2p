@@ -97,7 +97,7 @@
 
                                 <!-- Catalogos del sudo -->
                                 
-                                    <x-jet-dropdown-link href="#">
+                                    <x-jet-dropdown-link href="{{ route('steepone.index') }}">
                                         {{ __('Mis Proyectos') }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="#">

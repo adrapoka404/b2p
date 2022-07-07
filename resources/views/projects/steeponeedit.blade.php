@@ -5,16 +5,17 @@
             <x-menu-project :menu="request()
                 ->route()
                 ->getName()" />
-            {!! Form::open(['route' => 'steepone.store', 'atocomplete' => 'off', 'files' => true, 'id' => 'formSteepOne']) !!}
+            {!! Form::model($project, ['route' => ['steepone.update', $project], 'atocomplete' => 'off', 'files' => true, 'id' => 'formSteepOne', 'method' => 'put']) !!}
             <div class="w-full mx-5">
-                <x-form-steep-one :projecttypes="$projecttypes" :docs="$docs" />
-                {!! Form::close() !!}
+                <x-form-steep-one :projecttypes="$projecttypes" :docs="$docs" :project="$project" :pOptions="$pOptions"
+                    :pInputs='$pInputs' />
                 <div class="flex mx-5 ">
                     <div class=" w-2/3 mx-3 my-5">
 
                     </div>
                     <div class=" w-1/3 mx-2 my-5">
                         {!! Form::hidden('project[completo]', 0, ['id' => 'form_completo']) !!}
+                        {!! Form::hidden('project[exist]', $project->id) !!}
                         <span id="onlySave"
                             class='bg-red-700 font-cairo text-white font-semibold rounded-full mx-3 my-1 px-5 py-3 text-sm cursor-pointer'>Guardar
                             Avance</span>
@@ -23,14 +24,16 @@
                     </div>
                 </div>
             </div>
+            {!! Form::close() !!}
         </div>
     </div>
     @section('jquery')
         <script>
             $(document).ready(function() {
-                var caracteristicas = 3; // igualar con el mónimo de características requeridas
-                var aportaciones = 1 // igualar con mínimo de aportaciones requeridas
-                var origins = 1 // igualar con mínimo de origne de aportación requeridas
+
+                var caracteristicas = {{ $pOptions }}; // igualar con el mónimo de características requeridas
+                var aportaciones = {{ $pInputs }} // igualar con mínimo de aportaciones requeridas
+                var origins = {{ $pOrigins }} // igualar con mínimo de origne de aportación requeridas
                 var debs = 1 // igualar con mínimo de origne de aportación requeridas
 
                 var debPorcent = 0;
@@ -113,6 +116,58 @@
                 })
 
                 $(".debAmountTotal").keyup(function() {
+                    validar_amount();
+                })
+
+                $(".debPorcentTotal").change(function() {
+                    validar_conceptos();
+                })
+
+                $("#onlySave").on('click', function() {
+                    $("#form_completo").val('0');
+                    $("#formSteepOne").attr('action', "{{ route('steepone.store') }}");
+                    $("input[name=_method]").val("POST");
+                    $("#formSteepOne").submit();
+                })
+
+                $("#nextSteep").on('click', function() {
+                    $("#form_completo").val('1');
+                    $("#formSteepOne").attr('action', "{{ route('steepone.update', $project) }}");
+                    $("#formSteepOne").submit();
+
+                })
+
+                $("#text_description").on('keyup', function() {
+                    validar_description();
+                })
+
+                $("#minAmount").on('change', function(){
+                    validar_montominimo();
+                })
+
+                $("#changeDoc").on('click', function(){
+                    $("#docNoExist").show();
+                    $("#renderExist").remove();
+                })
+
+                $("#changeDocAvala").on('click', function(){
+                    $("#docAvalaNoExist").show();
+                    $("#docExist").remove();
+                })
+                validar_description();
+                validar_montominimo();
+                validar_conceptos();
+                validar_amount();
+
+                $(window).on("load resize", function() {
+
+                    var alturaBuscador = $(".buscador").outerHeight(true),
+                        alturaVentana = $(window).height(),
+                        alturaMapa = alturaVentana - alturaBuscador;
+
+                    $("#mapa-geocoder").css("height", alturaMapa + "px");
+                });
+                function validar_amount(){
                     var debAmount = 0;
                     var maxAmount = $("#maxAmount").val();
                     var minAmount = $("#minAmount").val();
@@ -133,9 +188,8 @@
                         $("#debAmountTotal").addClass('bg-red-300')
                         $("#errorDebAmount").show();
                     }
-                })
-
-                $(".debPorcentTotal").keyup(function() {
+                }
+                function validar_conceptos(){
                     var debPorcent = 0;
 
                     $(".debPorcentTotal").each(function(index, value) {
@@ -154,22 +208,77 @@
                         $("#debPorcentTotal").removeClass('bg-red-300')
                         $("#errorDebPorcent").hide();
                     }
-                })
 
-                $("#onlySave").on('click', function() {
-                    $("#formSteepOne").submit();
-                })
+                }
+                function validar_montominimo(){
+                    var mMax = $("#maxAmount").val();
+                    var mMin = $("#minAmount").val();
 
-                $("#nextSteep").on('click', function() {
-                    $("#form_completo").val('1');
-                    $("#formSteepOne").submit();
+                    var rMin = mMax * 0.2;
+                    console.log(rMin);
+                    if(mMin < rMin)
+                        $("#errorMontoMinimo").show();
+                    else 
+                        $("#errorMontoMinimo").hide();
+                }
 
-                })
-
-                $("#text_description").on('keyup', function() {
-                    van = 600 - $(this).val().length;
+                function validar_description() {
+                    van = 600 - $("#text_description").val().length;
                     $("#conteo_description").html(van);
-                })
+
+                    if (van <= 200)
+                        $("#conteo_description").attr('class', 'text-xs font-extralight text-green');
+                    else
+                        $("#conteo_description").attr('class', 'text-xs font-extralight text-red-300');
+                }
+
+                function localizar(elemento, direccion) {
+                    var geocoder = new google.maps.Geocoder();
+
+                    var map = new google.maps.Map(document.getElementById(elemento), {
+                        zoom: 16,
+                        scrollwheel: true,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+
+                    geocoder.geocode({
+                        'address': direccion
+                    }, function(results, status) {
+                        if (status === 'OK') {
+                            var resultados = results[0].geometry.location,
+                                resultados_lat = resultados.lat(),
+                                resultados_long = resultados.lng();
+
+                            map.setCenter(results[0].geometry.location);
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                            });
+                        } else {
+                            var mensajeError = "";
+                            if (status === "ZERO_RESULTS") {
+                                mensajeError = "No hubo resultados para la dirección ingresada.";
+                            } else if (status === "OVER_QUERY_LIMIT" || status === "REQUEST_DENIED" ||
+                                status === "UNKNOWN_ERROR") {
+                                mensajeError = "Error general del mapa.";
+                            } else if (status === "INVALID_REQUEST") {
+                                mensajeError = "Error de la web. Contacte con Name Agency.";
+                            }
+                            alert(mensajeError);
+                        }
+                    });
+                }
+
+                $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBZIl9d9L3quYguphtnLQQOS0_t-weOHf8",
+                    function() {
+                        $("#buscar").click(function() {
+                            var direccion = $("#direccion").val();
+                            if (direccion !== "") {
+                                localizar("mapa-geocoder", direccion);
+                            }
+                        });
+                    });
+
             })
         </script>
     @endsection

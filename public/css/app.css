@@ -1008,10 +1008,6 @@ select{
   margin-bottom: 0;
 }
 
-.static{
-  position: static;
-}
-
 .fixed{
   position: fixed;
 }
@@ -1149,6 +1145,16 @@ select{
 .-my-5{
   margin-top: -1.25rem;
   margin-bottom: -1.25rem;
+}
+
+.mx-6{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mx-7{
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
 }
 
 .ml-3{
@@ -1561,6 +1567,10 @@ select{
   cursor: pointer;
 }
 
+.resize{
+  resize: both;
+}
+
 .list-inside{
   list-style-position: inside;
 }
@@ -1588,10 +1598,6 @@ select{
 
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-2{
@@ -1818,16 +1824,6 @@ select{
   border-color: rgb(132 146 166 / var(--tw-border-opacity));
 }
 
-.border-gray-dark{
-  --tw-border-opacity: 1;
-  border-color: rgb(39 52 68 / var(--tw-border-opacity));
-}
-
-.border-gray-light{
-  --tw-border-opacity: 1;
-  border-color: rgb(211 220 230 / var(--tw-border-opacity));
-}
-
 .border-b-black{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1888,6 +1884,11 @@ select{
   background-color: rgb(68 181 227 / var(--tw-bg-opacity));
 }
 
+.bg-gray{
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 146 166 / var(--tw-bg-opacity));
+}
+
 .bg-red-400{
   --tw-bg-opacity: 1;
   background-color: rgb(199 39 44 / var(--tw-bg-opacity));
@@ -1901,21 +1902,6 @@ select{
 .bg-blue-600{
   --tw-bg-opacity: 1;
   background-color: rgb(70 189 214 / var(--tw-bg-opacity));
-}
-
-.bg-gray{
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 146 166 / var(--tw-bg-opacity));
-}
-
-.bg-gray-light{
-  --tw-bg-opacity: 1;
-  background-color: rgb(211 220 230 / var(--tw-bg-opacity));
-}
-
-.bg-gray-dark{
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 52 68 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25{
@@ -1972,22 +1958,6 @@ select{
 
 .bg-fondo-registro{
   background-image: url('/img/edificios_registro.jpg');
-}
-
-.bg-fondo-home-registrate{
-  background-image: url('/img/icono_registrate.png');
-}
-
-.bg-fondo-home-elegir{
-  background-image: url('/img/icono_elegir.png');
-}
-
-.bg-fondo-home-invierte{
-  background-image: url('/img/icono_invierte.png');
-}
-
-.bg-fondo-home-gana{
-  background-image: url('/img/icono_gana.png');
 }
 
 .bg-gradient-to-r{
